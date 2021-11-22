@@ -1,0 +1,13 @@
+/* Seteos generales: pagina sin margenes---------------------------------------------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  /* Config general para que rem sea igual a 10px y misma tipografia en toda la web ------------------------------------------------------------*/
+  
+  html {
+    font-size: 62.5%;
+  }

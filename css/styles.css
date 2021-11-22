@@ -1,0 +1,1340 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+/* Seteos generales: pagina sin margenes---------------------------------------------------- */
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Config general para que rem sea igual a 10px y misma tipografia en toda la web ------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+}
+
+/* Estilos de header y footer --------------------------------------------------------------------------------------------------------------- */
+footer {
+  background-color: #fffcf2;
+  color: #949090;
+  padding: 0.5%;
+}
+
+.flexHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0.5vh 0.5vw;
+  position: fixed;
+  background-color: white;
+  z-index: 4;
+}
+
+.logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 71px;
+  width: 62px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header {
+  /* truco por el uso de inline-block ---------------------------------------------------------------------------------------- */
+}
+
+header ul {
+  list-style: none;
+  font-size: 0;
+}
+
+header a {
+  font: 400 1.5rem "Merriweather", serif;
+  color: #949090;
+  text-align: right;
+  text-decoration: none;
+}
+
+header li {
+  color: #ccc5b9;
+  padding: 2rem;
+  display: inline-block;
+  position: relative;
+}
+
+header ul ul {
+  position: absolute;
+  display: none;
+}
+
+header ul ul li {
+  display: block;
+  text-align: left;
+  padding: 0.5rem 0rem 0.1rem 0.5rem;
+}
+
+header ul li:hover ul {
+  display: block;
+  font-size: 1rem;
+  color: #ccc5b9;
+  background-color: #fffcf2;
+  border-radius: 10px;
+  width: 116px;
+}
+
+.hoverMenu li a:hover {
+  color: #eb5e28;
+}
+
+.fontFooter {
+  font: 400 1.5rem "Merriweather", serif;
+  color: #949090;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.rightSide {
+  text-align: right;
+}
+
+.centerSide {
+  text-align: center;
+}
+
+/* Presentacion Index ------------------------------------------------------------------------------------------------------------------------*/
+.big {
+  font: 600 6.5rem "Nunito", sans-serif;
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+  text-transform: uppercase;
+}
+
+.indexPresentation {
+  background-image: url("../images/fondoIndex.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  letter-spacing: 1.5rem;
+  word-spacing: 3rem;
+  color: black;
+  margin-top: 87px;
+}
+
+.overlayText {
+  text-shadow: 2px 2px 5px grey;
+}
+
+/* Estilo de secciones */
+.sectionGrey {
+  color: black;
+  background-image: url("../images/vintage-concrete.png");
+  background-repeat: repeat;
+}
+
+.sectionGreyProducts, .sectionGreyProductsTitle {
+  color: black;
+  padding: 2% 8% 2% 8%;
+  background-image: url("../images/vintage-concrete.png");
+  background-repeat: repeat;
+}
+
+.sectionGreyProductsTitle h1 {
+  font: 900 4.5rem "Merriweather", serif;
+  text-align: center;
+  margin-top: 87px;
+}
+
+.sectionGrey h1 {
+  font: 900 4.5rem "Merriweather", serif;
+  text-align: center;
+  margin-top: 87px;
+}
+
+.sectionGrey h2 {
+  font: 900 2rem "Merriweather", serif;
+  padding-bottom: 2%;
+}
+
+.sectionGrey p {
+  font: 400 1.5rem "Merriweather", serif;
+}
+
+.sectionGreyProducts p, .sectionGrey label {
+  font: 400 1.5rem "Merriweather", serif;
+}
+
+.mapaIndex {
+  position: relative;
+  text-align: right;
+  height: 300px;
+  width: 100%;
+  border: 0px;
+}
+
+.flexSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 6vh 2vw;
+}
+
+.flexSectionColumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3vh 2vw;
+}
+
+.flexSectionItem {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.boxOne {
+  width: 49%;
+  display: inline-block;
+}
+
+.boxBody {
+  position: relative;
+}
+
+/* Estilo de Lanzamientos -------------------------------------------------------------------------------------------------------------------*/
+.bigRelease {
+  font: 900 4.5rem "Merriweather", serif;
+  padding: 3rem 2rem 0rem 0rem;
+  margin-top: 87px;
+}
+
+.containerLaunch {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titlePresentation titlePresentation" "photoOne textOne" "textTwo photoTwo" "photoThree textThree" ". .";
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 0.01fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 0.01fr;
+  -ms-grid-columns: 49% 49%;
+      grid-template-columns: 49% 49%;
+  grid-row-gap: 1%;
+  grid-column-gap: 2%;
+  width: 100%;
+  margin: 0;
+  background-image: url("../images/vintage-concrete.png");
+  background-repeat: repeat;
+}
+
+.presentationLanzamientos {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: titlePresentation;
+}
+
+.paragraphLanzamientos {
+  font: 400 2rem "Merriweather", serif;
+  padding: 1rem 3.5rem 2rem 3.5rem;
+}
+
+.subtituleProducts {
+  font: 900 2.5rem "Merriweather", serif;
+  padding-bottom: 2%;
+}
+
+.alignRight {
+  text-align: right;
+  padding-left: 22rem;
+}
+
+.alignLeft {
+  text-align: left;
+  padding: 0rem 15rem 0rem 0rem;
+}
+
+.paragraphProducts {
+  font: 400 2rem "Merriweather", serif;
+}
+
+.h2Products {
+  font: 400 2.5rem "Merriweather", serif;
+}
+
+.titlePhotoProducts {
+  font: 900 2rem "Merriweather", serif;
+}
+
+.subtitlePhotoProducts {
+  font: 400 2.5rem "Merriweather", serif;
+}
+
+.photoOne {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: photoOne;
+  justify-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.photoThree {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: photoThree;
+  justify-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.photoTwo {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: photoTwo;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.textOne {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: textOne;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.textTwo {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: textTwo;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.textThree {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: textThree;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.productImage {
+  height: 85%;
+  width: 75%;
+}
+
+/* Estilo de Productos -----------------------------------------------------------------------------------------------------------------------*/
+.containerProducts {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena";
+  -ms-grid-rows: 0.3fr 2fr 0.3fr 0.2fr 2fr;
+      grid-template-rows: 0.3fr 2fr 0.3fr 0.2fr 2fr;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  grid-column-gap: 1%;
+  width: 100%;
+  margin: 0;
+  background-image: url("../images/vintage-concrete.png");
+  background-repeat: repeat;
+}
+
+.titleA30 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titleA30;
+}
+
+.photoA30 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: photoA30;
+}
+
+.titleHerrero {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: titleHerrero;
+}
+
+.photoHerrero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: photoHerrero;
+}
+
+.titleRotonda {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: titleRotonda;
+}
+
+.photoRotonda {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: photoRotonda;
+}
+
+.titleModena {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: titleModena;
+}
+
+.photoModena {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: photoModena;
+}
+
+/* Estilo de distribuidores ----------------------------------------------------------------------------------------------------------------*/
+.distributorsFirst {
+  background-image: url("../images/distributors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 87px;
+  text-align: center;
+  color: black;
+}
+
+.bigDistributors {
+  font: 900 4.5rem "Merriweather", serif;
+  padding: 3rem 2rem 0rem 0rem;
+}
+
+.subtituleDistributors {
+  font: 900 2.5rem "Merriweather", serif;
+  padding: 3rem 2rem 20rem 0rem;
+  margin-bottom: 0rem;
+}
+
+.flexSectionDistri {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 6vh 2vw;
+}
+
+/* Tabla de distribuidores ------------------------------------------------------------------------------------------------------------------*/
+.containerTable {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  width: 50%;
+  height: 62vh;
+  margin: 0;
+  background-color: #fffcf2;
+  border: solid #eb5e28 1px;
+}
+
+.itemTable {
+  border: solid #eb5e28 1px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1px 0px 1px 0px;
+  display: -ms-grid;
+  display: grid;
+  font: 400 1.3rem "Merriweather", serif;
+}
+
+.titulo1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo1;
+}
+
+.titulo2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: titulo2;
+}
+
+.titulo3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: titulo3;
+}
+
+.a1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: a1;
+}
+
+.a2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: a2;
+}
+
+.a3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: a3;
+}
+
+.a4 {
+  grid-area: a4;
+}
+
+.b1 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: b1;
+}
+
+.b2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: b2;
+}
+
+.b3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: b3;
+}
+
+.b4 {
+  grid-area: b4;
+}
+
+.c1 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: c1;
+}
+
+.c2 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: c2;
+}
+
+.c3 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: c3;
+}
+
+.c4 {
+  grid-area: c4;
+}
+
+.d1 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: d1;
+}
+
+.d2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: d2;
+}
+
+.d3 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: d3;
+}
+
+.d4 {
+  grid-area: d4;
+}
+
+.titlesDistri {
+  color: black;
+  font: 400 2rem "Merriweather", serif;
+  padding: 0.3rem;
+}
+
+.liPhone {
+  list-style-image: url(../images/iconPhone.png);
+  margin-left: 2rem;
+  font: 400 1.2rem "Merriweather", serif;
+}
+
+.liMap {
+  list-style-image: url(../images/iconMap.png);
+  margin-left: 2rem;
+  font: 400 1.2rem "Merriweather", serif;
+}
+
+.liMail {
+  list-style-image: url(../images/iconMail.png);
+  margin-left: 2rem;
+  font: 400 1.2rem "Merriweather", serif;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+/* Estilos contacto ---------------------------------------------------------------------------------------------------------------------*/
+.contactTitle {
+  font: 900 4.5rem "Merriweather", serif;
+  padding-top: 19rem;
+  padding-bottom: 21rem;
+  margin-bottom: 0rem;
+}
+
+.contactPresentation {
+  background-image: url("../images/contactUs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  letter-spacing: 1rem;
+  word-spacing: 2rem;
+  color: black;
+}
+
+.liContact {
+  margin-top: 2%;
+  margin-left: 20%;
+  font: 400 1.5rem "Merriweather", serif;
+  text-decoration: none;
+}
+
+.flexSectItemForm {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.flexSectItemButton {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.itemMarginLeft {
+  margin-left: 5rem;
+}
+
+input[type=text], input[type=tel], input[type=email] {
+  padding: 5px;
+  border: 2px solid #eb5e28;
+  border-radius: 10px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #eb5e28;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font: 400 1.3rem "Merriweather", serif;
+}
+
+/*MOBILE VIEW ----------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 599px) {
+  .flexHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    padding: 0.5vh 0.5vw;
+    z-index: 4;
+  }
+  header li {
+    font: 400 1.1rem "Merriweather", serif;
+    color: #949090;
+    padding: 0.5rem 0.5rem 0rem 1rem;
+    display: inline-block;
+    position: relative;
+  }
+  header a {
+    font: 400 1.1rem "Merriweather", serif;
+    color: #949090;
+    font-size: 1.1rem;
+    text-align: right;
+    text-decoration: none;
+  }
+  .big {
+    font: 900 3rem "Merriweather", serif;
+    padding: 10rem 0rem 10rem 0rem;
+  }
+  .sectionGrey h2 {
+    font: 900 1.5rem "Merriweather", serif;
+    color: black;
+  }
+  .sectionGrey p {
+    font: 400 1.1rem "Merriweather", serif;
+  }
+  .sectionGreyProducts p {
+    font: 400 1.2rem "Merriweather", serif;
+    color: white;
+  }
+  .sectionGrey label {
+    font: 400 1.2rem "Merriweather", serif;
+    color: black;
+  }
+  .indexPresentation {
+    background-image: url("../images/fondoIndex.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    letter-spacing: 1rem;
+    word-spacing: 2rem;
+    color: black;
+    margin-top: 87px;
+  }
+  .mapaIndex {
+    display: none;
+  }
+  .fontFooter {
+    font: 400 0.7rem "Merriweather", serif;
+  }
+  .sectionGrey {
+    background-color: #949090;
+    color: #fffcf2;
+  }
+  .paragraphLanzamientos {
+    font: 400 1.5rem "Merriweather", serif;
+    padding: 1rem 3.5rem 0rem 3.5rem;
+    margin-bottom: 0rem;
+  }
+  .bigRelease {
+    font: 900 2rem "Merriweather", serif;
+    padding: 3rem 2rem 0rem 0rem;
+    margin-top: 87px;
+  }
+  .containerLaunch {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titlePresentation" "." "textOne" "photoOne" "." "textTwo" "photoTwo" "." "textThree" "photoThree";
+    -ms-grid-rows: 0.6fr 0.1fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr;
+        grid-template-rows: 0.6fr 0.1fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/vintage-concrete.png");
+    background-repeat: repeat;
+  }
+  .productImage {
+    height: 54%;
+    width: 80%;
+  }
+  .paragraphProducts {
+    font: 400 1.2rem "Merriweather", serif;
+    text-align: center;
+  }
+  .subtituleProducts {
+    font: 900 1.5rem "Merriweather", serif;
+    padding-bottom: 0%;
+    text-align: center;
+  }
+  .presentationLanzamientos {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titlePresentation;
+  }
+  .photoOne {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: photoOne;
+    justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
+  .textOne {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: textOne;
+  }
+  .photoTwo {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    grid-area: photoTwo;
+    justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
+  .textTwo {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: textTwo;
+  }
+  .photoThree {
+    -ms-grid-row: 10;
+    -ms-grid-column: 1;
+    grid-area: photoThree;
+    justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
+  .textThree {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    grid-area: textThree;
+  }
+  .alignRight {
+    text-align: center;
+    padding: 0rem 7rem 0rem 7rem;
+  }
+  .alignLeft {
+    text-align: center;
+    padding: 0rem 7rem 0rem 7rem;
+  }
+  .containerProducts {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titleA30"  "photoA30"  "."  "titleHerrero"  "photoHerrero" "." "titleRotonda"  "photoRotonda" "." "titleModena"  "photoModena";
+    -ms-grid-rows: 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr;
+        grid-template-rows: 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-column-gap: 1%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/vintage-concrete.png");
+    background-repeat: repeat;
+  }
+  .titleA30 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titleA30;
+  }
+  .photoA30 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: photoA30;
+  }
+  .titleHerrero {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: titleHerrero;
+  }
+  .photoHerrero {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: photoHerrero;
+  }
+  .titleRotonda {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    grid-area: titleRotonda;
+  }
+  .photoRotonda {
+    -ms-grid-row: 8;
+    -ms-grid-column: 1;
+    grid-area: photoRotonda;
+  }
+  .titleModena {
+    -ms-grid-row: 10;
+    -ms-grid-column: 1;
+    grid-area: titleModena;
+  }
+  .photoModena {
+    -ms-grid-row: 11;
+    -ms-grid-column: 1;
+    grid-area: photoModena;
+  }
+  .sectionGrey h1, .sectionGreyProductsTitle h1, .h2Products {
+    font: 900 2rem "Merriweather", serif;
+  }
+  .titlePhotoProducts {
+    font: 900 1.5rem "Merriweather", serif;
+  }
+  .subtitlePhotoProducts {
+    font: 400 1.2rem "Merriweather", serif;
+  }
+  .bigDistributors {
+    font: 900 2.5rem "Merriweather", serif;
+    padding: 3rem 2rem 0rem 0rem;
+  }
+  .subtituleDistributors {
+    font: 900 1.5rem "Merriweather", serif;
+    padding: 3rem 2rem 10rem 0rem;
+    margin-bottom: 0rem;
+  }
+  .containerTable {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    -ms-grid-columns: 1fr 1fr 1.8fr;
+        grid-template-columns: 1fr 1fr 1.8fr;
+    width: 97%;
+    height: 70vh;
+    margin: 0;
+    background-color: #fffcf2;
+    border: solid #eb5e28 1px;
+  }
+  .itemTable {
+    border: solid #eb5e28 1px;
+    justify-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1px 0px 1px 1rem;
+    display: -ms-grid;
+    display: grid;
+    font: 400 1.2rem "Merriweather", serif;
+    color: black;
+  }
+  .titlesDistri {
+    color: black;
+    font: 400 1.2rem "Merriweather", serif;
+    padding: 0.3rem;
+  }
+  .titulo1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titulo1;
+  }
+  .titulo2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: titulo2;
+  }
+  .titulo3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: titulo3;
+  }
+  .a1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: a1;
+  }
+  .a2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: a2;
+  }
+  .a3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: a3;
+  }
+  .a4 {
+    grid-area: a4;
+  }
+  .b1 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: b1;
+  }
+  .b2 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: b2;
+  }
+  .b3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: b3;
+  }
+  .b4 {
+    grid-area: b4;
+  }
+  .c1 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: c1;
+  }
+  .c2 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: c2;
+  }
+  .c3 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    grid-area: c3;
+  }
+  .c4 {
+    grid-area: c4;
+  }
+  .d1 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: d1;
+  }
+  .d2 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    grid-area: d2;
+  }
+  .d3 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    grid-area: d3;
+  }
+  .d4 {
+    grid-area: d4;
+  }
+  .liPhone {
+    margin-left: 0px;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .liMap {
+    margin-left: 0px;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .liMail {
+    margin-left: 0px;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .contactTitle {
+    font: 900 2.5rem "Merriweather", serif;
+    padding: 15rem 0rem 15rem 0rem;
+    margin-bottom: 0rem;
+  }
+  .mapaIndexMobile {
+    position: relative;
+    text-align: right;
+    height: 50%;
+    width: 100%;
+    border: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .flexSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    padding: 2vh 2vw;
+  }
+  .flexSectionItem {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0rem 2rem 0rem 2rem;
+  }
+  .boxOne {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+/* VISTA TABLET ----------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+  .flexHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    padding: 0.5vh 0.5vw;
+    z-index: 4;
+  }
+  .alignRight {
+    text-align: right;
+    padding-left: 12rem;
+  }
+  .containerTable {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    -ms-grid-columns: 1fr 1fr 1.4fr;
+        grid-template-columns: 1fr 1fr 1.4fr;
+    width: 70%;
+    height: 70vh;
+    margin: 0;
+    background-color: #fffcf2;
+    border: solid #eb5e28 1px;
+  }
+  .itemTable {
+    border: solid #eb5e28 1px;
+    justify-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1px 0px 1px 1rem;
+    display: -ms-grid;
+    display: grid;
+    font: 400 1.2rem "Merriweather", serif;
+    color: black;
+  }
+  .titlesDistri {
+    color: black;
+    font: 400 1.2rem "Merriweather", serif;
+    padding: 0.3rem;
+  }
+  .titulo1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titulo1;
+  }
+  .titulo2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: titulo2;
+  }
+  .titulo3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: titulo3;
+  }
+  .a1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: a1;
+  }
+  .a2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: a2;
+  }
+  .a3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: a3;
+  }
+  .a4 {
+    grid-area: a4;
+  }
+  .b1 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: b1;
+  }
+  .b2 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: b2;
+  }
+  .b3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: b3;
+  }
+  .b4 {
+    grid-area: b4;
+  }
+  .c1 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: c1;
+  }
+  .c2 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: c2;
+  }
+  .c3 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    grid-area: c3;
+  }
+  .c4 {
+    grid-area: c4;
+  }
+  .d1 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: d1;
+  }
+  .d2 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    grid-area: d2;
+  }
+  .d3 {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    grid-area: d3;
+  }
+  .d4 {
+    grid-area: d4;
+  }
+  .liPhone {
+    margin-left: 2rem;
+    text-align: left;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .liMap {
+    margin-left: 2rem;
+    text-align: left;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .liMail {
+    margin-left: 2rem;
+    text-align: left;
+    font: 400 1.1rem "Merriweather", serif;
+    color: black;
+  }
+  .flexSectionItem {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0rem 2rem 0rem 2rem;
+    text-align: center;
+  }
+}
+
+/* Bootstrap Customization ----------------------------------------------------------------------------------------------------------------*/
+a:hover {
+  color: #eb5e28;
+}
+
+.hamburguerAlign {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.selectionPage {
+  color: #eb5e28;
+  font-weight: 900;
+}
+
+.bg-orange {
+  background-color: #eb5e28;
+}
+
+.c-violeta {
+  color: #8011f2;
+}
+
+.c-blanco {
+  color: white;
+}
+
+.pIndex {
+  font: 400 1.5rem "Merriweather", serif;
+}
+
+.h2Index {
+  font: 900 2rem "Merriweather", serif;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=styles.css.map */
