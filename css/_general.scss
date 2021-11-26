@@ -11,3 +11,13 @@
   html {
     font-size: 62.5%;
   }
+
+  .bigTitleImage {
+    font: $fontTitleBig;
+    padding-top: 19rem;
+    padding-bottom: 21rem;
+    margin-bottom: 0rem;
+    text-align: center;
+    letter-spacing: 1rem;
+    word-spacing: 2rem;
+  }

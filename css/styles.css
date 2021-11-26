@@ -13,6 +13,16 @@ html {
   font-size: 62.5%;
 }
 
+.bigTitleImage {
+  font: 900 4.5rem "Merriweather", serif;
+  padding-top: 19rem;
+  padding-bottom: 21rem;
+  margin-bottom: 0rem;
+  text-align: center;
+  letter-spacing: 1rem;
+  word-spacing: 2rem;
+}
+
 /* Estilos de header y footer --------------------------------------------------------------------------------------------------------------- */
 footer {
   background-color: #fffcf2;
@@ -133,7 +143,7 @@ header ul li:hover ul {
 }
 
 .overlayText {
-  text-shadow: 2px 2px 5px grey;
+  text-shadow: 0px 0px 3px white;
 }
 
 /* Estilo de secciones */
@@ -437,30 +447,18 @@ header ul li:hover ul {
   background-image: url("../images/distributors.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 87px;
   text-align: center;
   color: black;
-}
-
-.bigDistributors {
-  font: 900 4.5rem "Merriweather", serif;
-  padding: 3rem 2rem 0rem 0rem;
-}
-
-.subtituleDistributors {
-  font: 900 2.5rem "Merriweather", serif;
-  padding: 3rem 2rem 20rem 0rem;
-  margin-bottom: 0rem;
 }
 
 .flexSectionDistri {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -468,7 +466,7 @@ header ul li:hover ul {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  padding: 6vh 2vw;
+  padding: 3vh 2vw;
 }
 
 /* Tabla de distribuidores ------------------------------------------------------------------------------------------------------------------*/
@@ -476,10 +474,10 @@ header ul li:hover ul {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   width: 50%;
   height: 62vh;
   margin: 0;
@@ -635,20 +633,10 @@ a {
 }
 
 /* Estilos contacto ---------------------------------------------------------------------------------------------------------------------*/
-.contactTitle {
-  font: 900 4.5rem "Merriweather", serif;
-  padding-top: 19rem;
-  padding-bottom: 21rem;
-  margin-bottom: 0rem;
-}
-
 .contactPresentation {
   background-image: url("../images/contactUs.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-  letter-spacing: 1rem;
-  word-spacing: 2rem;
   color: black;
 }
 
@@ -772,6 +760,11 @@ input[type=button], input[type=submit], input[type=reset] {
   .sectionGrey {
     background-color: #949090;
     color: #fffcf2;
+  }
+  .bigTitleImage {
+    font: 900 2.5rem "Merriweather", serif;
+    padding: 15rem 0rem 15rem 0rem;
+    margin-bottom: 0rem;
   }
   .paragraphLanzamientos {
     font: 400 1.5rem "Merriweather", serif;
@@ -942,15 +935,6 @@ input[type=button], input[type=submit], input[type=reset] {
   .subtitlePhotoProducts {
     font: 400 1.2rem "Merriweather", serif;
   }
-  .bigDistributors {
-    font: 900 2.5rem "Merriweather", serif;
-    padding: 3rem 2rem 0rem 0rem;
-  }
-  .subtituleDistributors {
-    font: 900 1.5rem "Merriweather", serif;
-    padding: 3rem 2rem 10rem 0rem;
-    margin-bottom: 0rem;
-  }
   .containerTable {
     display: -ms-grid;
     display: grid;
@@ -1083,11 +1067,6 @@ input[type=button], input[type=submit], input[type=reset] {
     margin-left: 0px;
     font: 400 1.1rem "Merriweather", serif;
     color: black;
-  }
-  .contactTitle {
-    font: 900 2.5rem "Merriweather", serif;
-    padding: 15rem 0rem 15rem 0rem;
-    margin-bottom: 0rem;
   }
   .mapaIndexMobile {
     position: relative;

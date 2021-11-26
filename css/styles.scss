@@ -114,7 +114,7 @@ header {
 }
 
 .overlayText {
-  text-shadow:  2px 2px 5px grey;
+  text-shadow: 0px 0px 3px white;
 }
 
 /* Estilo de secciones */
@@ -314,29 +314,17 @@ header {
   background-image: url("../images/distributors.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 87px;
   text-align: center;
   color: black;
 }
 
-.bigDistributors {
-    font: $fontTitleBig;
-    padding: 3rem 2rem 0rem 0rem;
-}
-
-.subtituleDistributors {
-  font: $fontTitleImagesMobile;
-  padding: 3rem 2rem 20rem 0rem;
-  margin-bottom: 0rem;
-}
-
 .flexSectionDistri {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 6vh 2vw;
+  padding: 3vh 2vw;
 }
 
 
@@ -345,8 +333,8 @@ header {
 .containerTable {
   display: grid;
   grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 50%;
   height: 62vh;
   margin: 0;
@@ -403,20 +391,10 @@ a {
 
 /* Estilos contacto ---------------------------------------------------------------------------------------------------------------------*/
 
-.contactTitle {
-  font: $fontTitleBig;
-  padding-top: 19rem;
-  padding-bottom: 21rem;
-  margin-bottom: 0rem;
-}
-
 .contactPresentation {
   background-image: url("../images/contactUs.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-  letter-spacing: 1rem;
-  word-spacing: 2rem;
   color: black;
 }
 
@@ -542,6 +520,12 @@ input {
     color: rgb(255, 252, 242);
   }
 
+  .bigTitleImage {
+    font: $fontTitleImagesMobile;
+    padding: 15rem 0rem 15rem 0rem;
+    margin-bottom: 0rem;
+  }
+
 // MOBILE VIEW LANZAMIENTOS  ----------------------------------------------------------
 
   .paragraphLanzamientos {
@@ -657,17 +641,6 @@ input {
 
 // MOBILE VIEW DISTRIBUIDORES  ----------------------------------------------------------
 
-  .bigDistributors {
-    font: $fontTitleImagesMobile;
-    padding: 3rem 2rem 0rem 0rem;
-  }
-
-  .subtituleDistributors {
-    font: $fontSubtitleMobile;
-    padding: 3rem 2rem 10rem 0rem;
-    margin-bottom: 0rem;
-  }
-
   .containerTable {
     display: grid;
     grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
@@ -724,11 +697,6 @@ input {
   }
 
 // MOBILE VIEW CONTACTENOS  ----------------------------------------------------------
-  .contactTitle {
-    font: $fontTitleImagesMobile;
-    padding: 15rem 0rem 15rem 0rem;
-    margin-bottom: 0rem;
-  }
 
   .mapaIndexMobile {
     position: relative;
