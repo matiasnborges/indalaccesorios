@@ -15,12 +15,17 @@ html {
 
 .bigTitleImage {
   font: 900 4.5rem "Merriweather", serif;
-  padding-top: 19rem;
-  padding-bottom: 21rem;
+  padding-top: 22rem;
+  padding-bottom: 16rem;
   margin-bottom: 0rem;
   text-align: center;
   letter-spacing: 1rem;
   word-spacing: 2rem;
+}
+
+.subtitlePages {
+  font: 900 2rem "Merriweather", serif;
+  padding: 0rem 16rem 0rem 21rem;
 }
 
 /* Estilos de header y footer --------------------------------------------------------------------------------------------------------------- */
@@ -110,6 +115,13 @@ header ul li:hover ul {
 
 .fontFooter {
   font: 400 1.5rem "Merriweather", serif;
+  color: #949090;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.fontIcons {
+  font: 400 2.5rem "Merriweather", serif;
   color: #949090;
   margin-left: 0px;
   margin-right: 0px;
@@ -253,9 +265,9 @@ header ul li:hover ul {
 .containerLaunch {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "titlePresentation titlePresentation" "photoOne textOne" "textTwo photoTwo" "photoThree textThree" ". .";
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 0.01fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 0.01fr;
+      grid-template-areas: "titlePresentation titlePresentation" "subtitlePresentation subtitlePresentation" "cardOne cardTwo"  ". .";
+  -ms-grid-rows: 1fr 0.1fr 1fr 0.01fr;
+      grid-template-rows: 1fr 0.1fr 1fr 0.01fr;
   -ms-grid-columns: 49% 49%;
       grid-template-columns: 49% 49%;
   grid-row-gap: 1%;
@@ -271,6 +283,18 @@ header ul li:hover ul {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: titlePresentation;
+  background-image: url("../images/lanzamientosTop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+.presentationLanzamientosSub {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: subtitlePresentation;
 }
 
 .paragraphLanzamientos {
@@ -281,16 +305,6 @@ header ul li:hover ul {
 .subtituleProducts {
   font: 900 2.5rem "Merriweather", serif;
   padding-bottom: 2%;
-}
-
-.alignRight {
-  text-align: right;
-  padding-left: 22rem;
-}
-
-.alignLeft {
-  text-align: left;
-  padding: 0rem 15rem 0rem 0rem;
 }
 
 .paragraphProducts {
@@ -309,82 +323,43 @@ header ul li:hover ul {
   font: 400 2.5rem "Merriweather", serif;
 }
 
-.photoOne {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: photoOne;
-  justify-self: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.photoThree {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: photoThree;
-  justify-self: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.photoTwo {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: photoTwo;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
-}
-
-.textOne {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: textOne;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.textTwo {
+.cardOne {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
-  grid-area: textTwo;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  grid-area: cardOne;
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.textThree {
-  -ms-grid-row: 4;
+.cardTwo {
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
-  grid-area: textThree;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  grid-area: cardTwo;
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.productImage {
-  height: 85%;
-  width: 75%;
+.sizeImageLaunch {
+  width: 90%;
 }
 
 /* Estilo de Productos -----------------------------------------------------------------------------------------------------------------------*/
 .containerProducts {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena";
-  -ms-grid-rows: 0.3fr 2fr 0.3fr 0.2fr 2fr;
-      grid-template-rows: 0.3fr 2fr 0.3fr 0.2fr 2fr;
+      grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
+  -ms-grid-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+      grid-template-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
   grid-column-gap: 1%;
@@ -394,50 +369,80 @@ header ul li:hover ul {
   background-repeat: repeat;
 }
 
-.titleA30 {
+.presentationProducts {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: titleProducts;
+  background-image: url("../images/productsTop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+.presentationProductsSub {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: subtitleProducts;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.titleA30 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: titleA30;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .photoA30 {
-  -ms-grid-row: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: photoA30;
 }
 
 .titleHerrero {
-  -ms-grid-row: 1;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: titleHerrero;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .photoHerrero {
-  -ms-grid-row: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: photoHerrero;
 }
 
 .titleRotonda {
-  -ms-grid-row: 4;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: titleRotonda;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .photoRotonda {
-  -ms-grid-row: 5;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: photoRotonda;
 }
 
 .titleModena {
-  -ms-grid-row: 4;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: titleModena;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .photoModena {
-  -ms-grid-row: 5;
+  -ms-grid-row: 7;
   -ms-grid-column: 2;
   grid-area: photoModena;
 }
@@ -716,9 +721,8 @@ input[type=button], input[type=submit], input[type=reset] {
     position: relative;
   }
   header a {
-    font: 400 1.1rem "Merriweather", serif;
+    font: 400 1.5rem "Merriweather", serif;
     color: #949090;
-    font-size: 1.1rem;
     text-align: right;
     text-decoration: none;
   }
@@ -755,7 +759,7 @@ input[type=button], input[type=submit], input[type=reset] {
     display: none;
   }
   .fontFooter {
-    font: 400 0.7rem "Merriweather", serif;
+    font: 400 1.2rem "Merriweather", serif;
   }
   .sectionGrey {
     background-color: #949090;
@@ -763,7 +767,7 @@ input[type=button], input[type=submit], input[type=reset] {
   }
   .bigTitleImage {
     font: 900 2.5rem "Merriweather", serif;
-    padding: 15rem 0rem 15rem 0rem;
+    padding: 19rem 0rem 11rem 0rem;
     margin-bottom: 0rem;
   }
   .paragraphLanzamientos {
@@ -779,19 +783,35 @@ input[type=button], input[type=submit], input[type=reset] {
   .containerLaunch {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "titlePresentation" "." "textOne" "photoOne" "." "textTwo" "photoTwo" "." "textThree" "photoThree";
-    -ms-grid-rows: 0.6fr 0.1fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr;
-        grid-template-rows: 0.6fr 0.1fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr;
+        grid-template-areas: "titlePresentation" "subtitlePresentation" "." "cardOne" "." "cardTwo";
+    -ms-grid-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
+        grid-template-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
     width: 100%;
     margin: 0;
     background-image: url("../images/vintage-concrete.png");
     background-repeat: repeat;
   }
-  .productImage {
-    height: 54%;
-    width: 80%;
+  .presentationLanzamientos {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titlePresentation;
+    background-image: url("../images/lanzamientosTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+  }
+  .presentationLanzamientosSub {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: subtitlePresentation;
+  }
+  .subtitlePages {
+    font: 900 1.5rem "Merriweather", serif;
+    padding: 0rem 2rem 0rem 2rem;
   }
   .paragraphProducts {
     font: 400 1.2rem "Merriweather", serif;
@@ -807,10 +827,10 @@ input[type=button], input[type=submit], input[type=reset] {
     -ms-grid-column: 1;
     grid-area: titlePresentation;
   }
-  .photoOne {
+  .cardOne {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
-    grid-area: photoOne;
+    grid-area: cardOne;
     justify-self: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -818,37 +838,11 @@ input[type=button], input[type=submit], input[type=reset] {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-item-align: baseline;
-        align-self: baseline;
   }
-  .textOne {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: textOne;
-  }
-  .photoTwo {
-    -ms-grid-row: 7;
-    -ms-grid-column: 1;
-    grid-area: photoTwo;
-    justify-self: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-item-align: baseline;
-        align-self: baseline;
-  }
-  .textTwo {
+  .cardTwo {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
-    grid-area: textTwo;
-  }
-  .photoThree {
-    -ms-grid-row: 10;
-    -ms-grid-column: 1;
-    grid-area: photoThree;
+    grid-area: cardTwo;
     justify-self: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -856,28 +850,13 @@ input[type=button], input[type=submit], input[type=reset] {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-item-align: baseline;
-        align-self: baseline;
-  }
-  .textThree {
-    -ms-grid-row: 9;
-    -ms-grid-column: 1;
-    grid-area: textThree;
-  }
-  .alignRight {
-    text-align: center;
-    padding: 0rem 7rem 0rem 7rem;
-  }
-  .alignLeft {
-    text-align: center;
-    padding: 0rem 7rem 0rem 7rem;
   }
   .containerProducts {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "titleA30"  "photoA30"  "."  "titleHerrero"  "photoHerrero" "." "titleRotonda"  "photoRotonda" "." "titleModena"  "photoModena";
-    -ms-grid-rows: 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr;
-        grid-template-rows: 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr;
+        grid-template-areas: "titleProducts"  "subtitleProducts" "titleA30"  "photoA30"  "titleHerrero"  "photoHerrero" "titleRotonda"  "photoRotonda" "titleModena"  "photoModena";
+    -ms-grid-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr;
+        grid-template-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
     grid-column-gap: 1%;
@@ -886,23 +865,41 @@ input[type=button], input[type=submit], input[type=reset] {
     background-image: url("../images/vintage-concrete.png");
     background-repeat: repeat;
   }
-  .titleA30 {
+  .presentationProducts {
     -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titleProducts;
+    background-image: url("../images/productsTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+  }
+  .presentationProductsSub {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: subtitleProducts;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .titleA30 {
+    -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: titleA30;
   }
   .photoA30 {
-    -ms-grid-row: 2;
+    -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: photoA30;
   }
   .titleHerrero {
-    -ms-grid-row: 4;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: titleHerrero;
   }
   .photoHerrero {
-    -ms-grid-row: 5;
+    -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: photoHerrero;
   }
@@ -917,12 +914,12 @@ input[type=button], input[type=submit], input[type=reset] {
     grid-area: photoRotonda;
   }
   .titleModena {
-    -ms-grid-row: 10;
+    -ms-grid-row: 9;
     -ms-grid-column: 1;
     grid-area: titleModena;
   }
   .photoModena {
-    -ms-grid-row: 11;
+    -ms-grid-row: 10;
     -ms-grid-column: 1;
     grid-area: photoModena;
   }
@@ -1278,6 +1275,10 @@ input[type=button], input[type=submit], input[type=reset] {
 
 /* Bootstrap Customization ----------------------------------------------------------------------------------------------------------------*/
 a:hover {
+  color: #eb5e28;
+}
+
+.hoverMenu:hover {
   color: #eb5e28;
 }
 

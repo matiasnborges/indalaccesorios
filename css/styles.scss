@@ -79,7 +79,14 @@ header {
 }
 
 .fontFooter {
-  font: $fontForm;
+  font: $fontFooter;
+  color: rgb(148, 144, 144);
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.fontIcons {
+  font: $fontIcons;
   color: rgb(148, 144, 144);
   margin-left: 0px;
   margin-right: 0px;
@@ -207,8 +214,8 @@ header {
 
 .containerLaunch {
   display: grid;
-  grid-template-areas: "titlePresentation titlePresentation" "photoOne textOne" "textTwo photoTwo" "photoThree textThree" ". .";
-  grid-template-rows: 1fr 1fr 1fr 1fr 0.01fr;
+  grid-template-areas: "titlePresentation titlePresentation" "subtitlePresentation subtitlePresentation" "cardOne cardTwo"  ". .";
+  grid-template-rows: 1fr 0.1fr 1fr 0.01fr;
   grid-template-columns: 49% 49%;
   grid-row-gap: 1%;
   grid-column-gap: 2%;
@@ -220,6 +227,15 @@ header {
 
 .presentationLanzamientos {
   grid-area: titlePresentation;
+  background-image: url("../images/lanzamientosTop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+.presentationLanzamientosSub {
+  grid-area: subtitlePresentation;
 }
 
 .paragraphLanzamientos {
@@ -230,16 +246,6 @@ header {
 .subtituleProducts {
   font:$fontTitleImagesMobile;
   padding-bottom: 2%;
-}
-
-.alignRight {
-  text-align: right;
-  padding-left: 22rem;
-}
-
-.alignLeft {
-  text-align: left;
-  padding: 0rem 15rem 0rem 0rem;
 }
 
 .paragraphProducts {
@@ -258,39 +264,25 @@ header {
   font: $fontProducts;
 }
 
-@each $number in One, Three {
-  .photo#{$number} {
-    grid-area: photo#{$number};
-    justify-self: flex-end;
+@each $number in One,Two {
+  .card#{$number} {
+    grid-area: card#{$number};
+    justify-self: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
    }
 }
 
-.photoTwo {
-  grid-area: photoTwo;
-  display: flex;
-  align-self: center;
-}
-
-@each $number in One, Two, Three {
-  .text#{$number} {
-    grid-area: text#{$number};
-    align-self: center;
-   }
-}
-
-.productImage {
-  height: 85%;
-  width: 75%;
+.sizeImageLaunch {
+  width: 90%;
 }
 
 /* Estilo de Productos -----------------------------------------------------------------------------------------------------------------------*/
 
 .containerProducts {
   display: grid;
-  grid-template-areas: "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena";
-  grid-template-rows: 0.3fr 2fr 0.3fr 0.2fr 2fr;
+  grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
+  grid-template-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
   grid-template-columns: 50% 50%;
   grid-column-gap: 1%;
   width: 100%;
@@ -299,9 +291,24 @@ header {
   background-repeat: repeat;
 }
 
+.presentationProducts {
+  grid-area: titleProducts;
+  background-image: url("../images/productsTop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: black;
+}
+
+.presentationProductsSub {
+  grid-area: subtitleProducts;
+  align-self:center;
+}
+
 @each $line in A30, Herrero, Rotonda, Modena {
   .title#{$line} {
     grid-area: title#{$line};
+    align-self: flex-end;
    }
   .photo#{$line} {
     grid-area: photo#{$line};
@@ -463,9 +470,8 @@ input {
     }
 
     a {
-      font: $fontTableItemMobile;
+      font: $fontSubtitlePageMobile;
       color: rgb(148, 144, 144);
-      font-size: 1.1rem;
       text-align: right;
       text-decoration: none;
     }
@@ -522,7 +528,7 @@ input {
 
   .bigTitleImage {
     font: $fontTitleImagesMobile;
-    padding: 15rem 0rem 15rem 0rem;
+    padding: 19rem 0rem 11rem 0rem;
     margin-bottom: 0rem;
   }
 
@@ -538,19 +544,36 @@ input {
     padding: 3rem 2rem 0rem 0rem;
     margin-top: 87px;
   }
+
   .containerLaunch {
     display: grid;
-    grid-template-areas: "titlePresentation" "." "textOne" "photoOne" "." "textTwo" "photoTwo" "." "textThree" "photoThree";
-    grid-template-rows: 0.6fr 0.1fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr 0.2fr 0.2fr 0.6fr ;
+    grid-template-areas: "titlePresentation" "subtitlePresentation" "." "cardOne" "." "cardTwo";
+    grid-template-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
     grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
     width: 100%;
     margin: 0;
     background-image: url("../images/vintage-concrete.png");
     background-repeat: repeat;
   }
-  .productImage {
-      height: 54%;
-      width: 80%;
+
+  .presentationLanzamientos {
+    grid-area: titlePresentation;
+    background-image: url("../images/lanzamientosTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+
+  }
+  
+  .presentationLanzamientosSub {
+    grid-area: subtitlePresentation;
+  }
+
+  .subtitlePages {
+    font: $fontSubtitleMobile;
+    padding: 0rem 2rem 0rem 2rem;
   }
 
   .paragraphProducts {
@@ -568,47 +591,34 @@ input {
     grid-area: titlePresentation;
   }
 
-  @each $section in One, Two, Three {
-    .photo#{$section} {
-      grid-area: photo#{$section};
+  @each $number in One,Two {
+    .card#{$number} {
+      grid-area: card#{$number};
       justify-self: center;
       display: flex;
       justify-content: center;
-      align-self: baseline;
-    }
-    .text#{$section} {
-      grid-area: text#{$section};
-    }
+     }
   }
-
-  .alignRight {
-    text-align: center;
-    padding: 0rem 7rem 0rem 7rem;
-  }
-
-  .alignLeft {
-    text-align: center;
-    padding: 0rem 7rem 0rem 7rem;
-}
-
+  
 
 // MOBILE VIEW Productos  ----------------------------------------------------------
 
+
+
   .containerProducts {
     display: grid;
-    grid-template-areas: "titleA30" 
+    grid-template-areas: "titleProducts" 
+                          "subtitleProducts"
+                          "titleA30" 
                           "photoA30" 
-                          "." 
                           "titleHerrero" 
                           "photoHerrero"
-                          "."
                           "titleRotonda" 
                           "photoRotonda"
-                          "."
                           "titleModena" 
                           "photoModena";
     
-    grid-template-rows: 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr 0.2fr 0.2fr 2fr;
+    grid-template-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr;
     grid-template-columns: 100%;
     grid-column-gap: 1%;
     width: 100%;
@@ -617,6 +627,20 @@ input {
     background-repeat: repeat;
   }
 
+  .presentationProducts {
+    grid-area: titleProducts;
+    background-image: url("../images/productsTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+  }
+  
+  .presentationProductsSub {
+    grid-area: subtitleProducts;
+    align-self:center;
+  }
+  
   @each $line in A30, Herrero, Rotonda, Modena {
     .title#{$line} {
       grid-area: title#{$line};
@@ -816,6 +840,10 @@ input {
 /* Bootstrap Customization ----------------------------------------------------------------------------------------------------------------*/
 
 a:hover {
+  color: rgb(235, 94, 40);
+}
+
+.hoverMenu:hover {
   color: rgb(235, 94, 40);
 }
 

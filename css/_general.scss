@@ -14,10 +14,15 @@
 
   .bigTitleImage {
     font: $fontTitleBig;
-    padding-top: 19rem;
-    padding-bottom: 21rem;
+    padding-top: 22rem;
+    padding-bottom: 16rem;
     margin-bottom: 0rem;
     text-align: center;
     letter-spacing: 1rem;
     word-spacing: 2rem;
+  }
+
+  .subtitlePages {
+    font: $fontTitleBigMobile;
+    padding: 0rem 16rem 0rem 21rem;
   }
