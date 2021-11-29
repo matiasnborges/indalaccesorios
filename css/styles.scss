@@ -128,14 +128,14 @@ header {
 
 .sectionGrey {
   color: black;
-  background-image: url("../images/vintage-concrete.png");
+  background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
 }
 
 .sectionGreyProducts, .sectionGreyProductsTitle {
   color: black;
   padding: 2% 8% 2% 8%;
-  background-image: url("../images/vintage-concrete.png");
+  background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
 }
 
@@ -221,7 +221,7 @@ header {
   grid-column-gap: 2%;
   width: 100%;
   margin: 0;
-  background-image: url("../images/vintage-concrete.png");
+  background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
 }
 
@@ -283,11 +283,11 @@ header {
   display: grid;
   grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
   grid-template-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49.5% 49.5%;
   grid-column-gap: 1%;
   width: 100%;
   margin: 0;
-  background-image: url("../images/vintage-concrete.png");
+  background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
 }
 
@@ -312,6 +312,7 @@ header {
    }
   .photo#{$line} {
     grid-area: photo#{$line};
+    padding: 0% 1% 0% 1%;
   }
 }
 
@@ -553,7 +554,7 @@ input {
     grid-row-gap: 0.5rem;
     width: 100%;
     margin: 0;
-    background-image: url("../images/vintage-concrete.png");
+    background-image: url("../images/backgroundSite.jpg");
     background-repeat: repeat;
   }
 
@@ -623,7 +624,7 @@ input {
     grid-column-gap: 1%;
     width: 100%;
     margin: 0;
-    background-image: url("../images/vintage-concrete.png");
+    background-image: url("../images/backgroundSite.jpg");
     background-repeat: repeat;
   }
 
