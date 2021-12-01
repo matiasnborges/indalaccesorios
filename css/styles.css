@@ -14,7 +14,7 @@ html {
 }
 
 .bigTitleImage {
-  font: 900 4.5rem "Merriweather", serif;
+  font: 900 5rem "Merriweather", serif;
   padding-top: 22rem;
   padding-bottom: 16rem;
   margin-bottom: 0rem;
@@ -25,7 +25,11 @@ html {
 
 .subtitlePages {
   font: 900 2rem "Merriweather", serif;
-  padding: 0rem 16rem 0rem 21rem;
+  padding: 1rem 16rem 0rem 16rem;
+}
+
+.overlayProducts {
+  text-shadow: 0px 0px 3px white;
 }
 
 /* Estilos de header y footer --------------------------------------------------------------------------------------------------------------- */
@@ -52,7 +56,7 @@ footer {
   width: 100%;
   padding: 0.5vh 0.5vw;
   position: fixed;
-  background-color: white;
+  background-color: #fffcf2;
   z-index: 4;
 }
 
@@ -155,7 +159,7 @@ header ul li:hover ul {
 }
 
 .overlayText {
-  text-shadow: 0px 0px 3px white;
+  text-shadow: 0px 0px 5px #fffcf2;
 }
 
 /* Estilo de secciones */
@@ -173,13 +177,13 @@ header ul li:hover ul {
 }
 
 .sectionGreyProductsTitle h1 {
-  font: 900 4.5rem "Merriweather", serif;
+  font: 900 5rem "Merriweather", serif;
   text-align: center;
   margin-top: 87px;
 }
 
 .sectionGrey h1 {
-  font: 900 4.5rem "Merriweather", serif;
+  font: 900 5rem "Merriweather", serif;
   text-align: center;
   margin-top: 87px;
 }
@@ -257,7 +261,7 @@ header ul li:hover ul {
 
 /* Estilo de Lanzamientos -------------------------------------------------------------------------------------------------------------------*/
 .bigRelease {
-  font: 900 4.5rem "Merriweather", serif;
+  font: 900 5rem "Merriweather", serif;
   padding: 3rem 2rem 0rem 0rem;
   margin-top: 87px;
 }
@@ -316,11 +320,11 @@ header ul li:hover ul {
 }
 
 .titlePhotoProducts {
-  font: 900 2rem "Merriweather", serif;
+  font: 900 2.5rem "Merriweather", serif;
 }
 
 .subtitlePhotoProducts {
-  font: 400 2.5rem "Merriweather", serif;
+  font: 400 2rem "Merriweather", serif;
 }
 
 .cardOne {
@@ -358,11 +362,10 @@ header ul li:hover ul {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
-  -ms-grid-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
-      grid-template-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
-  -ms-grid-columns: 49.5% 49.5%;
-      grid-template-columns: 49.5% 49.5%;
-  grid-column-gap: 1%;
+  -ms-grid-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+      grid-template-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   width: 100%;
   margin: 0;
   background-image: url("../images/backgroundSite.jpg");
@@ -403,7 +406,7 @@ header ul li:hover ul {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: photoA30;
-  padding: 0% 1% 0% 1%;
+  padding: 0rem 2vw 0rem 2vw;
 }
 
 .titleHerrero {
@@ -418,7 +421,7 @@ header ul li:hover ul {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: photoHerrero;
-  padding: 0% 1% 0% 1%;
+  padding: 0rem 2vw 0rem 2vw;
 }
 
 .titleRotonda {
@@ -433,7 +436,7 @@ header ul li:hover ul {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: photoRotonda;
-  padding: 0% 1% 0% 1%;
+  padding: 0rem 2vw 0rem 2vw;
 }
 
 .titleModena {
@@ -448,7 +451,7 @@ header ul li:hover ul {
   -ms-grid-row: 7;
   -ms-grid-column: 2;
   grid-area: photoModena;
-  padding: 0% 1% 0% 1%;
+  padding: 0rem 2vw 0rem 2vw;
 }
 
 /* Estilo de distribuidores ----------------------------------------------------------------------------------------------------------------*/
@@ -485,9 +488,9 @@ header ul li:hover ul {
       grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  width: 50%;
+  -ms-grid-columns: 0.9fr 0.9fr 1.2fr;
+      grid-template-columns: 0.9fr 0.9fr 1.2fr;
+  width: 60%;
   height: 62vh;
   margin: 0;
   background-color: #fffcf2;
@@ -540,6 +543,10 @@ header ul li:hover ul {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: a3;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding-left: 1rem;
 }
 
 .a4 {
@@ -562,6 +569,10 @@ header ul li:hover ul {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: b3;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding-left: 1rem;
 }
 
 .b4 {
@@ -584,6 +595,10 @@ header ul li:hover ul {
   -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: c3;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding-left: 1rem;
 }
 
 .c4 {
@@ -606,6 +621,10 @@ header ul li:hover ul {
   -ms-grid-row: 5;
   -ms-grid-column: 3;
   grid-area: d3;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding-left: 1rem;
 }
 
 .d4 {
@@ -621,23 +640,23 @@ header ul li:hover ul {
 .liPhone {
   list-style-image: url(../images/iconPhone.png);
   margin-left: 2rem;
-  font: 400 1.2rem "Merriweather", serif;
+  font: 400 1.3rem "Merriweather", serif;
 }
 
 .liMap {
   list-style-image: url(../images/iconMap.png);
   margin-left: 2rem;
-  font: 400 1.2rem "Merriweather", serif;
+  font: 400 1.3rem "Merriweather", serif;
 }
 
 .liMail {
   list-style-image: url(../images/iconMail.png);
   margin-left: 2rem;
-  font: 400 1.2rem "Merriweather", serif;
+  font: 400 1.3rem "Merriweather", serif;
 }
 
 a {
-  color: #0d6efd;
+  color: black;
   text-decoration: none;
 }
 
@@ -743,7 +762,7 @@ input[type=button], input[type=submit], input[type=reset] {
   }
   .sectionGreyProducts p {
     font: 400 1.2rem "Merriweather", serif;
-    color: white;
+    color: #fffcf2;
   }
   .sectionGrey label {
     font: 400 1.2rem "Merriweather", serif;
@@ -812,24 +831,7 @@ input[type=button], input[type=submit], input[type=reset] {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: subtitlePresentation;
-  }
-  .subtitlePages {
-    font: 900 1.5rem "Merriweather", serif;
-    padding: 0rem 2rem 0rem 2rem;
-  }
-  .paragraphProducts {
-    font: 400 1.2rem "Merriweather", serif;
-    text-align: center;
-  }
-  .subtituleProducts {
-    font: 900 1.5rem "Merriweather", serif;
-    padding-bottom: 0%;
-    text-align: center;
-  }
-  .presentationLanzamientos {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: titlePresentation;
+    padding-top: 2vh;
   }
   .cardOne {
     -ms-grid-row: 4;
@@ -854,6 +856,19 @@ input[type=button], input[type=submit], input[type=reset] {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .subtitlePages {
+    font: 900 1.5rem "Merriweather", serif;
+    padding: 0rem 2rem 0rem 2rem;
+  }
+  .paragraphProducts {
+    font: 400 1.2rem "Merriweather", serif;
+    text-align: center;
+  }
+  .subtituleProducts {
+    font: 900 1.5rem "Merriweather", serif;
+    padding-bottom: 0%;
+    text-align: center;
   }
   .containerProducts {
     display: -ms-grid;
@@ -886,46 +901,55 @@ input[type=button], input[type=submit], input[type=reset] {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    padding-top: 2vh;
   }
   .titleA30 {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: titleA30;
+    padding-top: 3vh;
   }
   .photoA30 {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     grid-area: photoA30;
+    padding: 0rem 4vw 0rem 4vw;
   }
   .titleHerrero {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     grid-area: titleHerrero;
+    padding-top: 3vh;
   }
   .photoHerrero {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
     grid-area: photoHerrero;
+    padding: 0rem 4vw 0rem 4vw;
   }
   .titleRotonda {
     -ms-grid-row: 7;
     -ms-grid-column: 1;
     grid-area: titleRotonda;
+    padding-top: 3vh;
   }
   .photoRotonda {
     -ms-grid-row: 8;
     -ms-grid-column: 1;
     grid-area: photoRotonda;
+    padding: 0rem 4vw 0rem 4vw;
   }
   .titleModena {
     -ms-grid-row: 9;
     -ms-grid-column: 1;
     grid-area: titleModena;
+    padding-top: 3vh;
   }
   .photoModena {
     -ms-grid-row: 10;
     -ms-grid-column: 1;
     grid-area: photoModena;
+    padding: 0rem 4vw 0rem 4vw;
   }
   .sectionGrey h1, .sectionGreyProductsTitle h1, .h2Products {
     font: 900 2rem "Merriweather", serif;
@@ -944,7 +968,7 @@ input[type=button], input[type=submit], input[type=reset] {
         grid-template-rows: repeat(5, 1fr);
     -ms-grid-columns: 1fr 1fr 1.8fr;
         grid-template-columns: 1fr 1fr 1.8fr;
-    width: 97%;
+    width: 99%;
     height: 70vh;
     margin: 0;
     background-color: #fffcf2;
@@ -956,7 +980,7 @@ input[type=button], input[type=submit], input[type=reset] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 1px 0px 1px 1rem;
+    padding: 1px 0px 1px 0.6rem;
     display: -ms-grid;
     display: grid;
     font: 400 1.2rem "Merriweather", serif;
@@ -965,7 +989,7 @@ input[type=button], input[type=submit], input[type=reset] {
   .titlesDistri {
     color: black;
     font: 400 1.2rem "Merriweather", serif;
-    padding: 0.3rem;
+    padding: 0.2rem;
   }
   .titulo1 {
     -ms-grid-row: 1;
@@ -1056,17 +1080,17 @@ input[type=button], input[type=submit], input[type=reset] {
   }
   .liPhone {
     margin-left: 0px;
-    font: 400 1.1rem "Merriweather", serif;
+    font: 400 1rem "Merriweather", serif;
     color: black;
   }
   .liMap {
     margin-left: 0px;
-    font: 400 1.1rem "Merriweather", serif;
+    font: 400 1rem "Merriweather", serif;
     color: black;
   }
   .liMail {
     margin-left: 0px;
-    font: 400 1.1rem "Merriweather", serif;
+    font: 400 1rem "Merriweather", serif;
     color: black;
   }
   .mapaIndexMobile {
@@ -1109,7 +1133,7 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 /* VISTA TABLET ----------------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width: 600px) and (max-width: 1023px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   .flexHeader {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1128,9 +1152,150 @@ input[type=button], input[type=submit], input[type=reset] {
     padding: 0.5vh 0.5vw;
     z-index: 4;
   }
+  .fontFooter {
+    font: 400 1.3rem "Merriweather", serif;
+  }
+  .containerLaunch {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titlePresentation" "subtitlePresentation" "." "cardOne" "." "cardTwo";
+    -ms-grid-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
+        grid-template-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/backgroundSite.jpg");
+    background-repeat: repeat;
+  }
+  .presentationLanzamientos {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titlePresentation;
+    background-image: url("../images/lanzamientosTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+  }
+  .presentationLanzamientosSub {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: subtitlePresentation;
+    padding-top: 2vh;
+  }
+  .cardOne {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: cardOne;
+    justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .cardTwo {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: cardTwo;
+    justify-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .alignRight {
     text-align: right;
     padding-left: 12rem;
+  }
+  .containerProducts {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "titleProducts"  "subtitleProducts" "titleA30"  "photoA30"  "titleHerrero"  "photoHerrero" "titleRotonda"  "photoRotonda" "titleModena"  "photoModena" " . ";
+    -ms-grid-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr;
+        grid-template-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    grid-column-gap: 1%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/backgroundSite.jpg");
+    background-repeat: repeat;
+  }
+  .presentationProducts {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: titleProducts;
+    background-image: url("../images/productsTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: black;
+  }
+  .presentationProductsSub {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: subtitleProducts;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding-top: 2vh;
+  }
+  .titleA30 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: titleA30;
+    padding-top: 3vh;
+  }
+  .photoA30 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: photoA30;
+    padding: 0rem 4vw 0rem 4vw;
+  }
+  .titleHerrero {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: titleHerrero;
+    padding-top: 3vh;
+  }
+  .photoHerrero {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: photoHerrero;
+    padding: 0rem 4vw 0rem 4vw;
+  }
+  .titleRotonda {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    grid-area: titleRotonda;
+    padding-top: 3vh;
+  }
+  .photoRotonda {
+    -ms-grid-row: 8;
+    -ms-grid-column: 1;
+    grid-area: photoRotonda;
+    padding: 0rem 4vw 0rem 4vw;
+  }
+  .titleModena {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+    grid-area: titleModena;
+    padding-top: 3vh;
+  }
+  .photoModena {
+    -ms-grid-row: 10;
+    -ms-grid-column: 1;
+    grid-area: photoModena;
+    padding: 0rem 4vw 0rem 4vw;
+  }
+  .subtitlePages {
+    padding: 0rem 10rem 0rem 10rem;
   }
   .containerTable {
     display: -ms-grid;
@@ -1306,7 +1471,7 @@ a:hover {
 }
 
 .c-blanco {
-  color: white;
+  color: #fffcf2;
 }
 
 .pIndex {
@@ -1314,7 +1479,7 @@ a:hover {
 }
 
 .h2Index {
-  font: 900 2rem "Merriweather", serif;
+  font: 900 2.5rem "Merriweather", serif;
 }
 
 .carousel-inner img {

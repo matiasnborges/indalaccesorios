@@ -5,8 +5,8 @@
 /* Estilos de header y footer --------------------------------------------------------------------------------------------------------------- */
 
 footer {
-  background-color: rgb(255, 252, 242);
-  color: rgb(148, 144, 144);
+  background-color: $white;
+  color: $grey;
   padding: 0.5%;
 }
 
@@ -18,7 +18,7 @@ footer {
   width: 100%;
   padding: 0.5vh 0.5vw;
   position: fixed;
-  background-color: white;
+  background-color: $white;
   z-index: 4;
 }
 
@@ -39,13 +39,13 @@ header {
 
   a {
     font: $fontForm;
-    color: rgb(148, 144, 144);
+    color: $grey;
     text-align: right;
     text-decoration: none;
   }
 
   li {
-    color: rgb(204, 197, 185);
+    color: $secondGrey;
     padding: 2rem;
     display: inline-block;
     position: relative;
@@ -66,8 +66,8 @@ header {
     li:hover ul {
       display: block;
       font-size: 1rem;
-      color: rgb(204, 197, 185);
-      background-color: rgb(255, 252, 242);
+      color: $secondGrey;
+      background-color: $white;
       border-radius: 10px;
       width: 116px;
     }
@@ -75,19 +75,19 @@ header {
 }
 
 .hoverMenu li a:hover {
-  color: rgb(235, 94, 40);
+  color: $orange;
 }
 
 .fontFooter {
   font: $fontFooter;
-  color: rgb(148, 144, 144);
+  color: $grey;
   margin-left: 0px;
   margin-right: 0px;
 }
 
 .fontIcons {
   font: $fontIcons;
-  color: rgb(148, 144, 144);
+  color: $grey;
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -116,24 +116,24 @@ header {
   text-align: center;
   letter-spacing: 1.5rem;
   word-spacing: 3rem;
-  color: black;
+  color: $textColor;
   margin-top: 87px;
 }
 
 .overlayText {
-  text-shadow: 0px 0px 3px white;
+  text-shadow: 0px 0px 5px $white;
 }
 
 /* Estilo de secciones */
 
 .sectionGrey {
-  color: black;
+  color: $textColor;
   background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
 }
 
 .sectionGreyProducts, .sectionGreyProductsTitle {
-  color: black;
+  color: $textColor;
   padding: 2% 8% 2% 8%;
   background-image: url("../images/backgroundSite.jpg");
   background-repeat: repeat;
@@ -231,7 +231,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  color: black;
+  color: $textColor;
 }
 
 .presentationLanzamientosSub {
@@ -261,7 +261,7 @@ header {
 }
 
 .subtitlePhotoProducts {
-  font: $fontProducts;
+  font: $fontParagraph;
 }
 
 @each $number in One,Two {
@@ -282,9 +282,8 @@ header {
 .containerProducts {
   display: grid;
   grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
-  grid-template-rows: 1fr 0.2fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
-  grid-template-columns: 49.5% 49.5%;
-  grid-column-gap: 1%;
+  grid-template-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+  grid-template-columns: 50% 50%;
   width: 100%;
   margin: 0;
   background-image: url("../images/backgroundSite.jpg");
@@ -297,7 +296,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  color: black;
+  color: $textColor;
 }
 
 .presentationProductsSub {
@@ -312,7 +311,7 @@ header {
    }
   .photo#{$line} {
     grid-area: photo#{$line};
-    padding: 0% 1% 0% 1%;
+    padding: 0rem 2vw 0rem 2vw;
   }
 }
 
@@ -323,7 +322,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  color: black;
+  color: $textColor;
 }
 
 .flexSectionDistri {
@@ -342,16 +341,16 @@ header {
   display: grid;
   grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 50%;
+  grid-template-columns: 0.9fr 0.9fr 1.2fr;
+  width: 60%;
   height: 62vh;
   margin: 0;
-  background-color: rgb(255, 252, 242);
-  border: solid rgb(235, 94, 40) 1px;
+  background-color: $white;
+  border: solid $orange 1px;
 }
 
 .itemTable {
-  border: solid rgb(235, 94, 40) 1px;
+  border: solid $orange 1px;
   justify-items: center;
   align-items: center;
   padding: 1px 0px 1px 0px;
@@ -372,6 +371,8 @@ header {
   }
   .#{$letter}3 {
     grid-area: #{$letter}3;
+    justify-content: left;
+    padding-left: 1rem;
   }
   .#{$letter}4 {
     grid-area: #{$letter}4;
@@ -379,7 +380,7 @@ header {
 }
 
 .titlesDistri {
-  color: black;
+  color: $textColor;
   font: $fontParagraph;
   padding: 0.3rem;
 }
@@ -388,12 +389,12 @@ header {
   .li#{$contact} {
     list-style-image: url(../images/icon#{$contact}.png);
     margin-left: 2rem;
-    font: $fontParagraphMobile;
+    font: $tableFont;
    }
 }
 
 a {
-  color: #0d6efd;
+  color: $textColor;
   text-decoration: none;
 }
 
@@ -403,7 +404,7 @@ a {
   background-image: url("../images/contactUs.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  color: black;
+  color: $textColor;
 }
 
 .liContact {
@@ -431,12 +432,12 @@ a {
 input {
   &[type=text], &[type=tel], &[type=email] {
     padding: 5px;
-    border: 2px solid rgb(235, 94, 40);
+    border: 2px solid $orange;
     border-radius: 10px;
   }
 
   &[type=button], &[type=submit], &[type=reset] {
-    background-color: rgb(235, 94, 40);
+    background-color: $orange;
     border: none;
     border-radius: 10px;
     color: white;
@@ -464,7 +465,7 @@ input {
   header {
     li {
       font: $fontTableItemMobile;
-      color: rgb(148, 144, 144);
+      color: $grey;
       padding: 0.5rem 0.5rem 0rem 1rem;
       display: inline-block;
       position: relative;
@@ -472,7 +473,7 @@ input {
 
     a {
       font: $fontSubtitlePageMobile;
-      color: rgb(148, 144, 144);
+      color: $grey;
       text-align: right;
       text-decoration: none;
     }
@@ -486,7 +487,7 @@ input {
   .sectionGrey {
     h2 {
       font: $fontSubtitleMobile;
-      color: black;
+      color: $textColor;
     }
 
     p {
@@ -496,11 +497,11 @@ input {
 
   .sectionGreyProducts p {
     font: $fontParagraphMobile;
-    color: white;
+    color: $white;
   }
   .sectionGrey label {
     font: $fontParagraphMobile;
-    color: black;
+    color: $textColor;
   }
 
   .indexPresentation {
@@ -510,7 +511,7 @@ input {
     text-align: center;
     letter-spacing: 1rem;
     word-spacing: 2rem;
-    color: black;
+    color: $textColor;
     margin-top: 87px;
   }
 
@@ -523,8 +524,8 @@ input {
   }
 
   .sectionGrey {
-    background-color: rgb(148, 144, 144);
-    color: rgb(255, 252, 242);
+    background-color: $grey;
+    color: $white;
   }
 
   .bigTitleImage {
@@ -564,12 +565,22 @@ input {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    color: black;
+    color: $textColor;
 
   }
   
   .presentationLanzamientosSub {
     grid-area: subtitlePresentation;
+    padding-top: 2vh;
+  }
+
+  @each $number in One,Two {
+    .card#{$number} {
+      grid-area: card#{$number};
+      justify-self: center;
+      display: flex;
+      justify-content: center;
+     }
   }
 
   .subtitlePages {
@@ -588,23 +599,7 @@ input {
     text-align: center;
   }
 
-  .presentationLanzamientos {
-    grid-area: titlePresentation;
-  }
-
-  @each $number in One,Two {
-    .card#{$number} {
-      grid-area: card#{$number};
-      justify-self: center;
-      display: flex;
-      justify-content: center;
-     }
-  }
-  
-
 // MOBILE VIEW Productos  ----------------------------------------------------------
-
-
 
   .containerProducts {
     display: grid;
@@ -634,20 +629,23 @@ input {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    color: black;
+    color: $textColor;
   }
   
   .presentationProductsSub {
     grid-area: subtitleProducts;
     align-self:center;
+    padding-top: 2vh;
   }
   
   @each $line in A30, Herrero, Rotonda, Modena {
     .title#{$line} {
       grid-area: title#{$line};
+      padding-top: 3vh;
     }
     .photo#{$line} {
       grid-area: photo#{$line};
+      padding: 0rem 4vw 0rem 4vw;
     }
   }
 
@@ -671,27 +669,27 @@ input {
     grid-template-areas: "titulo1 titulo2 titulo3" "a1 a2 a3" "b1 b2 b3" "c1 c2 c3" "d1 d2 d3";
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: 1fr 1fr 1.8fr;
-    width: 97%;
+    width: 99%;
     height: 70vh;
     margin: 0;
-    background-color: rgb(255, 252, 242);
-    border: solid rgb(235, 94, 40) 1px;
+    background-color: $white;
+    border: solid $orange 1px;
   }
 
   .itemTable {
-    border: solid rgb(235, 94, 40) 1px;
+    border: solid $orange 1px;
     justify-items: flex-start;
     align-items: center;
-    padding: 1px 0px 1px 1rem;
+    padding: 1px 0px 1px 0.6rem;
     display: grid;
     font: $fontParagraphMobile;
-    color: black;
+    color: $textColor;
   }
 
   .titlesDistri {
-    color: black;
+    color: $textColor;
     font: $fontParagraphMobile;
-    padding: 0.3rem;
+    padding: 0.2rem;
   }
 
   @for $i from 1 through 3 {
@@ -716,8 +714,8 @@ input {
   @each $contact in Phone, Map, Mail {
     .li#{$contact} {
       margin-left: 0px;
-      font: $fontTableItemMobile;
-      color: black;
+      font: $fontTableLiMobile;
+      color: $textColor;
      }
   }
 
@@ -753,7 +751,7 @@ input {
 }
 
 /* VISTA TABLET ----------------------------------------------------------------------------------------------------------------------------*/
-@media only screen and (min-width: 600px) and (max-width: 1023px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   .flexHeader {
     display: flex;
     flex-flow: row nowrap;
@@ -764,11 +762,106 @@ input {
     z-index: 4;
   }
 
+  .fontFooter {
+    font: $tableFont;
+  }
+
 // TABLET VIEW LANZAMIENTOS  ----------------------------------------------------------
+  .containerLaunch {
+    display: grid;
+    grid-template-areas: "titlePresentation" "subtitlePresentation" "." "cardOne" "." "cardTwo";
+    grid-template-rows: 0.6fr 0.2fr 0.03fr 0.5fr 0.03fr 0.5fr;
+    grid-template-columns: 100%;
+    grid-row-gap: 0.5rem;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/backgroundSite.jpg");
+    background-repeat: repeat;
+  }
+
+  .presentationLanzamientos {
+    grid-area: titlePresentation;
+    background-image: url("../images/lanzamientosTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: $textColor;
+
+  }
+
+  .presentationLanzamientosSub {
+    grid-area: subtitlePresentation;
+    padding-top: 2vh;
+  }
+
+  @each $number in One,Two {
+    .card#{$number} {
+      grid-area: card#{$number};
+      justify-self: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 
   .alignRight {
     text-align: right;
     padding-left: 12rem;
+  }
+
+// TABLET VIEW PRODUCTOS  ----------------------------------------------------------
+
+  .containerProducts {
+    display: grid;
+    grid-template-areas: "titleProducts" 
+                          "subtitleProducts"
+                          "titleA30" 
+                          "photoA30" 
+                          "titleHerrero" 
+                          "photoHerrero"
+                          "titleRotonda" 
+                          "photoRotonda"
+                          "titleModena" 
+                          "photoModena"
+                          " . ";
+    
+    grid-template-rows: 1fr 0.4fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr 0.7fr 0.1fr;
+    grid-template-columns: 100%;
+    grid-column-gap: 1%;
+    width: 100%;
+    margin: 0;
+    background-image: url("../images/backgroundSite.jpg");
+    background-repeat: repeat;
+  }
+
+  .presentationProducts {
+    grid-area: titleProducts;
+    background-image: url("../images/productsTop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: $textColor;
+  }
+  
+  .presentationProductsSub {
+    grid-area: subtitleProducts;
+    align-self:center;
+    padding-top: 2vh;
+  }
+  
+  @each $line in A30, Herrero, Rotonda, Modena {
+    .title#{$line} {
+      grid-area: title#{$line};
+      padding-top: 3vh;
+    }
+    .photo#{$line} {
+      grid-area: photo#{$line};
+      padding: 0rem 4vw 0rem 4vw;
+    }
+  }
+
+  .subtitlePages {
+    padding: 0rem 10rem 0rem 10rem;
   }
 
 // TABLET VIEW DISTRIBUIDORES  ----------------------------------------------------------
@@ -781,22 +874,22 @@ input {
     width: 70%;
     height: 70vh;
     margin: 0;
-    background-color: rgb(255, 252, 242);
-    border: solid rgb(235, 94, 40) 1px;
+    background-color: $white;
+    border: solid $orange 1px;
   }
 
   .itemTable {
-    border: solid rgb(235, 94, 40) 1px;
+    border: solid $orange 1px;
     justify-items: flex-start;
     align-items: center;
     padding: 1px 0px 1px 1rem;
     display: grid;
     font: $fontParagraphMobile;
-    color: black;
+    color: $textColor;
   }
 
   .titlesDistri {
-    color: black;
+    color: $textColor;
     font: $fontParagraphMobile;
     padding: 0.3rem;
   }
@@ -825,7 +918,7 @@ input {
       margin-left: 2rem;
       text-align: left;
       font: $fontTableItemMobile;
-      color: black;
+      color: $textColor;
     }
   }
 
@@ -841,11 +934,11 @@ input {
 /* Bootstrap Customization ----------------------------------------------------------------------------------------------------------------*/
 
 a:hover {
-  color: rgb(235, 94, 40);
+  color: $orange;
 }
 
 .hoverMenu:hover {
-  color: rgb(235, 94, 40);
+  color: $orange;
 }
 
 .hamburguerAlign {
@@ -853,12 +946,12 @@ a:hover {
 }
 
 .selectionPage {
-  color: rgb(235, 94, 40);
+  color: $orange;
   font-weight: 900;
 }
 
 .bg-orange {
-  background-color: rgb(235, 94, 40);
+  background-color: $orange;
 }
 
 .c-violeta {
@@ -866,7 +959,7 @@ a:hover {
 }
 
 .c-blanco {
-  color: white;
+  color: $white;
 }
 
 .pIndex {
