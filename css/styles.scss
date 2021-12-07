@@ -126,6 +126,13 @@ header {
 
 /* Estilo de secciones */
 
+.section404 {
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size:auto;
+  background-position-x: center;
+}
+
 .sectionGrey {
   color: $textColor;
   background-image: url("../images/backgroundSite.jpg");
@@ -441,12 +448,16 @@ input {
     border: none;
     border-radius: 10px;
     color: white;
-    padding: 16px 32px;
+    padding: 14px 16px;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 4px 10px;
     cursor: pointer;
     font: $tableFont;
   }
+}
+
+.hoverBtn:hover {
+  color: $textColor;
 }
 
 /*MOBILE VIEW ----------------------------------------------------------------------------------------------------------------------------*/

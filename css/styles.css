@@ -163,6 +163,13 @@ header ul li:hover ul {
 }
 
 /* Estilo de secciones */
+.section404 {
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: center;
+}
+
 .sectionGrey {
   color: black;
   background-image: url("../images/backgroundSite.jpg");
@@ -709,11 +716,15 @@ input[type=button], input[type=submit], input[type=reset] {
   border: none;
   border-radius: 10px;
   color: white;
-  padding: 16px 32px;
+  padding: 14px 16px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 4px 10px;
   cursor: pointer;
   font: 400 1.3rem "Merriweather", serif;
+}
+
+.hoverBtn:hover {
+  color: black;
 }
 
 /*MOBILE VIEW ----------------------------------------------------------------------------------------------------------------------------*/
