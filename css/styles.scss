@@ -7,7 +7,7 @@
 footer {
   background-color: $white;
   color: $grey;
-  padding: 0.5%;
+  padding: 2rem 0.5% 2rem 0.5%;
 }
 
 .flexHeader {
@@ -222,7 +222,7 @@ header {
 .containerLaunch {
   display: grid;
   grid-template-areas: "titlePresentation titlePresentation" "subtitlePresentation subtitlePresentation" "cardOne cardTwo"  ". .";
-  grid-template-rows: 1fr 0.1fr 1fr 0.01fr;
+  grid-template-rows: 0.8fr 0.1fr 1fr 0.08fr;
   grid-template-columns: 49% 49%;
   grid-row-gap: 1%;
   grid-column-gap: 2%;
@@ -289,7 +289,7 @@ header {
 .containerProducts {
   display: grid;
   grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
-  grid-template-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+  grid-template-rows: 0.8fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
   grid-template-columns: 50% 50%;
   width: 100%;
   margin: 0;
@@ -425,7 +425,7 @@ a {
   flex: 1;
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0rem 1rem;
 }
 
 .flexSectItemButton {
@@ -438,9 +438,10 @@ a {
 
 input {
   &[type=text], &[type=tel], &[type=email] {
-    padding: 5px;
+    padding: 1rem;
     border: 2px solid $orange;
     border-radius: 10px;
+    font: $tableFont;
   }
 
   &[type=button], &[type=submit], &[type=reset] {
@@ -454,6 +455,11 @@ input {
     cursor: pointer;
     font: $tableFont;
   }
+}
+
+.labelForm {
+  display: flex;
+  align-items: center;
 }
 
 .hoverBtn:hover {
@@ -520,8 +526,8 @@ input {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    letter-spacing: 1rem;
-    word-spacing: 2rem;
+    letter-spacing: 0rem;
+    word-spacing: 1rem;
     color: $textColor;
     margin-top: 87px;
   }
@@ -543,6 +549,8 @@ input {
     font: $fontTitleImagesMobile;
     padding: 19rem 0rem 11rem 0rem;
     margin-bottom: 0rem;
+    letter-spacing: 0rem;
+    word-spacing: 0.5rem;    
   }
 
 // MOBILE VIEW LANZAMIENTOS  ----------------------------------------------------------
@@ -757,6 +765,16 @@ input {
   .boxOne {
     width: 100%;
     display: inline-block;
+  }
+  .itemMarginLeft {
+    margin-left: 1rem;
+  }
+
+  input {
+    &[type=text], &[type=tel], &[type=email] {
+      padding: 1rem 0rem 1rem 1rem;
+      font: $fontTableItemMobile;
+    }
   }
 
 }
@@ -978,7 +996,7 @@ a:hover {
 }
 
 .h2Index {
-  font: $titlePhotoProducts;
+  font: $fontTitleBigIndexMobile;
 }
 
 .carousel-inner img {

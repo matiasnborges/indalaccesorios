@@ -36,7 +36,7 @@ html {
 footer {
   background-color: #fffcf2;
   color: #949090;
-  padding: 0.5%;
+  padding: 2rem 0.5% 2rem 0.5%;
 }
 
 .flexHeader {
@@ -277,8 +277,8 @@ header ul li:hover ul {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "titlePresentation titlePresentation" "subtitlePresentation subtitlePresentation" "cardOne cardTwo"  ". .";
-  -ms-grid-rows: 1fr 0.1fr 1fr 0.01fr;
-      grid-template-rows: 1fr 0.1fr 1fr 0.01fr;
+  -ms-grid-rows: 0.8fr 0.1fr 1fr 0.08fr;
+      grid-template-rows: 0.8fr 0.1fr 1fr 0.08fr;
   -ms-grid-columns: 49% 49%;
       grid-template-columns: 49% 49%;
   grid-row-gap: 1%;
@@ -369,8 +369,8 @@ header ul li:hover ul {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "titleProducts titleProducts" "subtitleProducts subtitleProducts" "titleA30 titleHerrero" "photoA30 photoHerrero" ". ." "titleRotonda titleModena" "photoRotonda photoModena" ". .";
-  -ms-grid-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
-      grid-template-rows: 1fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+  -ms-grid-rows: 0.8fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
+      grid-template-rows: 0.8fr 0.4fr 0.1fr 1fr 0.1fr 0.1fr 1fr 0.05fr;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
   width: 100%;
@@ -692,7 +692,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0rem 1rem;
 }
 
 .flexSectItemButton {
@@ -706,9 +706,10 @@ a {
 }
 
 input[type=text], input[type=tel], input[type=email] {
-  padding: 5px;
+  padding: 1rem;
   border: 2px solid #eb5e28;
   border-radius: 10px;
+  font: 400 1.3rem "Merriweather", serif;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -721,6 +722,15 @@ input[type=button], input[type=submit], input[type=reset] {
   margin: 4px 10px;
   cursor: pointer;
   font: 400 1.3rem "Merriweather", serif;
+}
+
+.labelForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .hoverBtn:hover {
@@ -784,8 +794,8 @@ input[type=button], input[type=submit], input[type=reset] {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    letter-spacing: 1rem;
-    word-spacing: 2rem;
+    letter-spacing: 0rem;
+    word-spacing: 1rem;
     color: black;
     margin-top: 87px;
   }
@@ -803,6 +813,8 @@ input[type=button], input[type=submit], input[type=reset] {
     font: 900 2.5rem "Merriweather", serif;
     padding: 19rem 0rem 11rem 0rem;
     margin-bottom: 0rem;
+    letter-spacing: 0rem;
+    word-spacing: 0.5rem;
   }
   .paragraphLanzamientos {
     font: 400 1.5rem "Merriweather", serif;
@@ -1140,6 +1152,13 @@ input[type=button], input[type=submit], input[type=reset] {
   .boxOne {
     width: 100%;
     display: inline-block;
+  }
+  .itemMarginLeft {
+    margin-left: 1rem;
+  }
+  input[type=text], input[type=tel], input[type=email] {
+    padding: 1rem 0rem 1rem 1rem;
+    font: 400 1.1rem "Merriweather", serif;
   }
 }
 
@@ -1490,7 +1509,7 @@ a:hover {
 }
 
 .h2Index {
-  font: 900 2.5rem "Merriweather", serif;
+  font: 900 3rem "Merriweather", serif;
 }
 
 .carousel-inner img {
