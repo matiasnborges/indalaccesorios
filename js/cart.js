@@ -6,26 +6,39 @@ let subtotal = 0;
 let total = 0;
 let cantidad = 0;
 let ivaTotal = 0;
-let precioMonotributo = 0;
-let optionOne = 300;
-let optionTwo = 500;
-let optionThree = 1000;
+
+//Definicion de objetos -------------------------------------------------------------------------------------
+
+class Producto{
+    constructor (codigo, descripcion, precio){
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio  = precio;
+    }
+    calcularPrecioMonotributo (iva) {
+        return this.precio * (1 + (iva / 100));
+    }
+    calcularIvaRespInscriptoProducto (iva) {
+        return this.precio * (iva / 100);
+    }
+}
+
+const producto1 = new Producto(1,"T-92 x 100unidades",300);
+const producto2 = new Producto(2,"T-87 x100 unidades",500);
+const producto3 = new Producto(3,"H-62 Falleba",1000);
+
 
 
 //Funciones --------------------------------------------------------------------------------------------------------------------------------
 function elegirOpcion () {
-    opcionElegida = parseInt(prompt("Podes comprar los siguientes productos (precios sin IVA): \n 1 - T-92 x 100unidades $" + optionOne +
-     "\n 2 - T-87 x100 unidades $" + optionTwo +
-     "\n 3 - H-62 Falleba $" + optionThree +
-     "\n 0 - Para salir \n Elegi una de las opciones"));
+    opcionElegida = parseInt(prompt(`Podes comprar los siguientes productos (precios sin IVA):
+                                    \n ${producto1.codigo} - ${producto1.descripcion} $${producto1.precio} \n ${producto2.codigo} - ${producto2.descripcion} $${producto2.precio} \n ${producto3.codigo} - ${producto3.descripcion} $${producto3.precio} \n 0 - Para salir 
+                                    \n Elegi una de las opciones`));
+    
 }
 
-function calcularIvaRespInscripto (precioVenta, iva) {
-    ivaTotal = ivaTotal + (precioVenta * (iva / 100));
-}
-
-function calcularPrecioMonotributo (precioVenta, iva) {
-    precioMonotributo = precioVenta * (1 + (iva / 100));
+function totalizarIvaRespInscripto (ivaProducto, cantidad) {
+    ivaTotal = ivaTotal + (ivaProducto * cantidad);
 }
 
 function calcularSubtotal (precioVenta, cantidad) {
@@ -45,19 +58,19 @@ if (condicionIva==1) {
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));        
         switch (opcionElegida) {
             case 1:
-                calcularSubtotal(optionOne,cantidad);
+                calcularSubtotal(producto1.precio,cantidad);
                 calcularTotal(subtotal);
-                calcularIvaRespInscripto(optionOne,iva);                
+                totalizarIvaRespInscripto(producto1.calcularIvaRespInscriptoProducto(iva), cantidad);         
                 break;
             case 2:
-                calcularSubtotal(optionTwo,cantidad);
+                calcularSubtotal(producto2.precio,cantidad);
                 calcularTotal(subtotal);
-                calcularIvaRespInscripto(optionTwo,iva);     
+                totalizarIvaRespInscripto(producto2.calcularIvaRespInscriptoProducto(iva), cantidad);         
                 break;
             case 3:
-                calcularSubtotal(optionThree,cantidad);
+                calcularSubtotal(producto3.precio,cantidad);
                 calcularTotal(subtotal);
-                calcularIvaRespInscripto(optionThree,iva);    
+                totalizarIvaRespInscripto(producto3.calcularIvaRespInscriptoProducto(iva), cantidad);         
                 break;
             default:
                 alert("La opcion elegida es incorrecta, por favor elegir una opcion valida");
@@ -74,18 +87,15 @@ else if (condicionIva==2) {
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));        
         switch (opcionElegida) {
             case 1:
-                calcularPrecioMonotributo(optionOne,iva);
-                calcularSubtotal(precioMonotributo,cantidad);
+                calcularSubtotal(producto1.calcularPrecioMonotributo(iva),cantidad);
                 calcularTotal(subtotal);              
                 break;
             case 2:
-                calcularPrecioMonotributo(optionTwo,iva);
-                calcularSubtotal(precioMonotributo,cantidad);
+                calcularSubtotal(producto2.calcularPrecioMonotributo(iva),cantidad);
                 calcularTotal(subtotal);       
                 break;
             case 3:
-                calcularPrecioMonotributo(optionThree,iva);
-                calcularSubtotal(precioMonotributo,cantidad);
+                calcularSubtotal(producto3.calcularPrecioMonotributo(iva),cantidad);
                 calcularTotal(subtotal); 
                 break;
             default:
