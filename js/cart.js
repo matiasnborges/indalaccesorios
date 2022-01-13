@@ -7,6 +7,7 @@ let total = 0;
 let cantidad = 0;
 let ivaTotal = 0;
 let productoElegido = 0;
+let ordenamiento = 1;
 const productos = [];
 const productosComprados = [];
 
@@ -65,13 +66,29 @@ function agregarProductoComprado(descripcion,cantidad) {
     productosComprados.push(new ProductoComprado(descripcion,cantidad));    
 }
 
+function ordenarProductos(ordenamiento) {
+    if (ordenamiento===2) {
+        productos.sort((a, b) => { 
+            if (a.precio === b.precio) {
+                return 0;
+            }
+            else if (a.precio <  b.precio) {
+                return -1;
+            }
+            else
+                return 1;
+        });   
+    }
+}
 
 // Algoritmo principal ---------------------------------------------------------------------------------------------------------------------
 
 condicionIva = parseInt(prompt(`Hola! Para comprar ingresa tu condicion de IVA: \n 1 - Responsable Inscripto \n 2 - Monotributista`));
+ordenamiento = parseInt(prompt(`Por favor elegi el orden en que queres ver los productos: \n 1 - Por codigo \n 2 - Por menor precio \n Si ingresas cualquier otra opcion se ordenara por codigo`));
+ordenarProductos(ordenamiento);
 
 if (condicionIva==1) {
-    //Responsable Inscripto
+//Responsable Inscripto
     elegirOpcion();
     while(opcionElegida != 0 ){
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));        
@@ -88,16 +105,10 @@ if (condicionIva==1) {
         elegirOpcion();
     }
     alert(`El total de la compra es $${total} y el IVA es $${ivaTotal}`);
-    //
-    //aca quisiera mostrar un alert con todo el array de productosComprados junto con el siguiente formato
-    //     alert(`Detalle de los productos comprados:
-    //           \n Cantidad: ${productosComprados[0].cantidadComprada} - Producto: ${productosComprados[0].descripcionComprada}
-    //           \n Cantidad: ${productosComprados[1].cantidadComprada} - Producto: ${productosComprados[1].descripcionComprada}
-    //           \n Cantidad: ${productosComprados[n].cantidadComprada} - Producto: ${productosComprados[n].descripcionComprada}`);
 
 } 
 else if (condicionIva==2) {
-    //Monotributista
+//Monotributista
     elegirOpcion();
     while(opcionElegida != 0 ){
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));
@@ -113,11 +124,7 @@ else if (condicionIva==2) {
     elegirOpcion();
     }
     alert(`El total de la compra es $${total} IVA incluido por ser monotributo`);
-    //
-    //aca quisiera mostrar un alert con todo el array de productosComprados junto con el siguiente formato
-    //     alert(`Detalle de los productos comprados:
-    //           \n Cantidad: ${productosComprados[0].cantidadComprada} - Producto: ${productosComprados[0].descripcionComprada}
-    //           \n Cantidad: ${productosComprados[n].cantidadComprada} - Producto: ${productosComprados[n].descripcionComprada}`);
+
 }
 else {
     alert("Ingresaste una opcion incorrecta, por favor volve a intentar ingresando: \n 1 - Para responsable inscripto \n 2 - Para monotributista");
