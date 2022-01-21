@@ -32,9 +32,11 @@ productos.push(new Producto(2,"T-87 x100 unidades",300));
 productos.push(new Producto(3,"H-62 Falleba",500));
 
 class ProductoComprado {
-    constructor (descripcionComprada, cantidadComprada) {
+    constructor (codigo, descripcionComprada, cantidadComprada, subtotal) {
+        this.codigo = codigo;
         this.descripcionComprada = descripcionComprada;
         this.cantidadComprada = cantidadComprada;
+        this.subtotal = subtotal;
     }
 }
 
@@ -62,8 +64,8 @@ function buscarProducto (opcionElegida) {
     productoElegido = productos.find(producto => producto.codigo === opcionElegida);
 }
 
-function agregarProductoComprado(descripcion,cantidad) {
-    productosComprados.push(new ProductoComprado(descripcion,cantidad));    
+function agregarProductoComprado(codigo, descripcion, cantidad, subtotal) {
+    productosComprados.push(new ProductoComprado(codigo, descripcion, cantidad, subtotal));    
 }
 
 function ordenarProductos(ordenamiento) {
@@ -81,6 +83,32 @@ function ordenarProductos(ordenamiento) {
     }
 }
 
+    // // Capturo el div con id container
+    // const contenedor = document.getElementById("containerProducts");
+    // // recorro el Array de productos con un for each
+    // // el for each es un metodo que recibe como parametro una funcion de flecha
+    // // esta funcion se ejecuta por cada elemento que tenga el array y le manda
+    // //como parametro cada uno de los elementos.
+    // // por cada vuelta ejecuta la funcion y dibuja una card
+    // productos.forEach((producto) => {
+    // //creo el elemento y lo guardo en la variable card
+    // let card = document.createElement("div");
+    // //como estoy usando bootstrap le agrego las clases que tiene la card que elegí
+    // card.classList.add("card", "col-sm-12", "col-lg-3");
+    // // a card le agrego el contenido html de la card, accediendo a los datos del array de objetos.
+    // card.innerHTML = `
+    //     <img src="${producto.imagen}" class="card-img-top" alt="...">
+    //     <div class="card-body">
+    //     <h5 class="card-title">${producto.descripcion}</h5>
+    //     <p class="card-text">${producto.precio}</p>
+    //     <a href="#cart" class="btn btn-primary"  >Comprar</a>
+    //     </div>
+    //     `;
+    // // a la variable contenedor donde tengo capturado el div contenedor le agrego
+    // // la card que construi
+    // contenedor.appendChild(card);
+    // });
+
 // Algoritmo principal ---------------------------------------------------------------------------------------------------------------------
 
 condicionIva = parseInt(prompt(`Hola! Para comprar ingresa tu condicion de IVA: \n 1 - Responsable Inscripto \n 2 - Monotributista`));
@@ -94,8 +122,8 @@ if (condicionIva==1) {
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));        
         if (opcionElegida <= productos.length && opcionElegida > 0) {
             buscarProducto(opcionElegida);
-            agregarProductoComprado(productoElegido.descripcion,cantidad);
             calcularSubtotal(productoElegido.precio,cantidad);
+            agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
             calcularTotal(subtotal);
             totalizarIvaRespInscripto(productoElegido.calcularIvaRespInscriptoProducto(iva), cantidad);
         }
@@ -104,7 +132,26 @@ if (condicionIva==1) {
         }
         elegirOpcion();
     }
-    alert(`El total de la compra es $${total} y el IVA es $${ivaTotal}`);
+
+    const tableElement = document.getElementById("productosComprados");
+    productosComprados.forEach((producto) => {
+        let productComprado = document.createElement("tr");
+        productComprado.innerHTML = `
+                <td>${producto.cantidadComprada}</td>
+                <td>${producto.descripcionComprada}</td>
+                <td>$ ${producto.subtotal}</td>
+            </tr>
+            `;
+        tableElement.appendChild(productComprado);
+    });
+
+    const mostrarTotal = document.getElementById("totalizador");
+    let totalfinal = document.createElement("h2");
+    totalfinal.innerHTML = 
+                `El total de la compra es $${total} y el IVA es $${ivaTotal}
+            </h2>
+            `;
+    mostrarTotal.appendChild(totalfinal);
 
 } 
 else if (condicionIva==2) {
@@ -114,16 +161,35 @@ else if (condicionIva==2) {
         cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));
         if (opcionElegida <= productos.length && opcionElegida > 0) {
             buscarProducto(opcionElegida);
-            agregarProductoComprado(productoElegido.descripcion,cantidad);
             calcularSubtotal(productoElegido.calcularPrecioMonotributo(iva),cantidad);
             calcularTotal(subtotal);
+            agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
         }
         else {
             alert("La opcion elegida es incorrecta, por favor elegir una opcion valida");
         }
     elegirOpcion();
     }
-    alert(`El total de la compra es $${total} IVA incluido por ser monotributo`);
+
+    //alert(`El total de la compra es $${total} IVA incluido por ser monotributo`);
+    
+    const tableElement = document.getElementById("productosComprados");
+    productosComprados.forEach((producto) => {
+        let productComprado = document.createElement("tr");
+        productComprado.innerHTML = `
+                <td>${producto.cantidadComprada}</td>
+                <td>${producto.descripcionComprada}</td>
+                <td>$ ${producto.subtotal}</td>
+            </tr>
+            `;
+        tableElement.appendChild(productComprado);
+    });
+
+    const mostrarTotal = document.getElementById("totalizador");
+    let totalfinal = document.createElement("h2");
+    totalfinal.innerHTML = `El total de la compra es $${total} IVA incluido por ser monotributo
+            </h2>`;
+    mostrarTotal.appendChild(totalfinal);
 
 }
 else {

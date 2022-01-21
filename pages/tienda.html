@@ -44,8 +44,22 @@
       <!-- Tabla con datos de contacto de los distribuidores ----------------------------------------------->
       <article class="sectionGrey flexSectionDistri">
         <h2 class="centerSide">Compra desde aca todos nuestros productos</h2>
-        <script src="../js/cart.js"></script>
-        </div>
+
+        <div class="table-responsive-md">
+          <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="productosComprados">
+            </tbody>
+        </table>
+      </div>
+      <div id=totalizador>       
+      </div>
       </article>
     </section>
     <!-- footer -------------------------------------------------------------------------------------------->
@@ -73,6 +87,7 @@
     </footer>
 
     <!-- Scripts ------------------------------------------------------------------------------------------------------------------------------------->
+    <script src="../js/cart.js"></script>
     <script src="../js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
