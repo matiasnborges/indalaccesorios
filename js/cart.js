@@ -106,32 +106,6 @@ function ordenarProductos(ordenamiento) {
     }
 }
 
-    // // Capturo el div con id container
-    // const contenedor = document.getElementById("containerProducts");
-    // // recorro el Array de productos con un for each
-    // // el for each es un metodo que recibe como parametro una funcion de flecha
-    // // esta funcion se ejecuta por cada elemento que tenga el array y le manda
-    // //como parametro cada uno de los elementos.
-    // // por cada vuelta ejecuta la funcion y dibuja una card
-    // productos.forEach((producto) => {
-    // //creo el elemento y lo guardo en la variable card
-    // let card = document.createElement("div");
-    // //como estoy usando bootstrap le agrego las clases que tiene la card que elegí
-    // card.classList.add("card", "col-sm-12", "col-lg-3");
-    // // a card le agrego el contenido html de la card, accediendo a los datos del array de objetos.
-    // card.innerHTML = `
-    //     <img src="${producto.imagen}" class="card-img-top" alt="...">
-    //     <div class="card-body">
-    //     <h5 class="card-title">${producto.descripcion}</h5>
-    //     <p class="card-text">${producto.precio}</p>
-    //     <a href="#cart" class="btn btn-primary"  >Comprar</a>
-    //     </div>
-    //     `;
-    // // a la variable contenedor donde tengo capturado el div contenedor le agrego
-    // // la card que construi
-    // contenedor.appendChild(card);
-    // });
-
 // Algoritmo principal ---------------------------------------------------------------------------------------------------------------------
 
 
