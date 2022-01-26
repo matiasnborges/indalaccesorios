@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
     <meta name="description" content="Distribuidores oficiales de accesorios para carpintería de aluminio que comercializamos en Indal Accesorios">
     <meta name="keywords" content="DISTRIBUIDORES INDAL ACCESORIOS, DISTRIBUIDORES ACCESORIOS DE ABERTURAS, DISTRIBUIDORES CARPINTERIA DE ALUMINIO, DISTRIBUIDORES FABRICA ACCESORIOS">
-    <title>Indal Accesorios - Distribuidores</title>
+    <title>Indal Accesorios - Tienda Virtual</title>
   </head>
   <body>
     <!-- logo y barra de navegacion ----------------------------------------------------------------------->
@@ -44,22 +44,30 @@
       <!-- Tabla con datos de contacto de los distribuidores ----------------------------------------------->
       <article class="sectionGrey flexSectionDistri">
         <h2 class="centerSide">Compra desde aca todos nuestros productos</h2>
+        <div id="welcome"></div>
+        <form id="clientDetail">
+          <label class="labelForm">Ingresa los siguientes datos para comprar:</label>
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre">
+          <label for="condicionIva">Condicion de IVA</label>
+          <select id="condicionIva">
+            <option value="1">Responsable Inscripto</option>
+            <option value="2">Monotributista</option>
+          </select>
+          <input type="submit" value="Confirmar" class="hoverBtn">
+          <input type="reset" value="Limpiar" class="hoverBtn">
+        </form>
 
         <div class="table-responsive-md">
           <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Subtotal</th>
-                </tr>
+            <thead id="tableHead">
             </thead>
             <tbody id="productosComprados">
             </tbody>
-        </table>
-      </div>
-      <div id=totalizador>       
-      </div>
+          </table>
+        </div>
+        <div id=totalizador>       
+        </div>
       </article>
     </section>
     <!-- footer -------------------------------------------------------------------------------------------->
