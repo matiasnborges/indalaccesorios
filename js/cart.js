@@ -1,5 +1,5 @@
 //Declaracion de variables --------------------------------------------------------------------------------------------------------------------------------
-let condicionIva = 0;
+let condicionIva = "ResponsableInscripto";
 let nombreCliente = "";
 const iva = 21;
 let opcionElegida = 0;
@@ -85,10 +85,14 @@ function comprarProducto(_codigoProductoComprado) {
     let codigoProductoComprado = parseInt(_codigoProductoComprado);
     let cantidad = parseInt(document.getElementById(`cantidad-${_codigoProductoComprado}`).value);
     buscarProducto(codigoProductoComprado);
-    calcularSubtotal(productoElegido.precio,cantidad);
+    if (condicionIva === "Monotributista" ) {
+        calcularSubtotal(productoElegido.calcularPrecioMonotributo(iva),cantidad);
+    } else {
+        calcularSubtotal(productoElegido.precio,cantidad); 
+        totalizarIvaRespInscripto(productoElegido.calcularIvaRespInscriptoProducto(iva), cantidad);  
+    }
     agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
     calcularTotal(subtotal);
-    totalizarIvaRespInscripto(productoElegido.calcularIvaRespInscriptoProducto(iva), cantidad);
     armarTotalizador();
 }
 
@@ -119,6 +123,27 @@ function calcularTotal (subtotal) {
     total = total + subtotal;
 }
 
+function mostrarTotal() {
+    if (condicionIva === "Monotributista" ) {
+        const mostrarTotal = document.getElementById("totalizador");
+        let totalfinal = document.createElement("h2");
+        totalfinal.className = "totalCart";
+        totalfinal.innerHTML = 
+                    `El total de la compra es $${total} IVA incluido por ser Monotributista</h2>`;
+        mostrarTotal.appendChild(totalfinal);
+
+    } else {
+        const mostrarTotal = document.getElementById("totalizador");
+        let totalfinal = document.createElement("h2");
+        totalfinal.className = "totalCart";
+        totalfinal.innerHTML = 
+                    `El total de la compra es $${total} y el IVA es $${ivaTotal}
+                </h2>
+                `;
+        mostrarTotal.appendChild(totalfinal);
+    }
+}
+
 function armarTotalizador() {
     if (productosComprados.length > 1) {
         var element = document.getElementById("totalizador");
@@ -141,16 +166,9 @@ function armarTotalizador() {
                 </tr>`;
             tableElement2.appendChild(productComprado);
         });
-    
-        const mostrarTotal = document.getElementById("totalizador");
-        let totalfinal = document.createElement("h2");
-        totalfinal.className = "totalCart";
-        totalfinal.innerHTML = 
-                    `El total de la compra es $${total} y el IVA es $${ivaTotal}
-                </h2>
-                `;
-        mostrarTotal.appendChild(totalfinal);
-        
+
+        mostrarTotal();  
+
     } else {
         const tableTitle = document.getElementById("tableHead");
         let titleProducts = document.createElement("tr");
@@ -171,14 +189,7 @@ function armarTotalizador() {
             tableElement.appendChild(productComprado);
         });
     
-        const mostrarTotal = document.getElementById("totalizador");
-        let totalfinal = document.createElement("h2");
-        totalfinal.className = "totalCart";
-        totalfinal.innerHTML = 
-                    `El total de la compra es $${total} y el IVA es $${ivaTotal}
-                </h2>
-                `;
-        mostrarTotal.appendChild(totalfinal);
+        mostrarTotal();
         
     }
 }
