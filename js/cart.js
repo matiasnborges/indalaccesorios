@@ -42,6 +42,26 @@ class ProductoComprado {
     }
 }
 
+//Cargo los productos en el HTML ------------------------------------------------------------------------------------------------
+const catalog = document.getElementById("productOffer");
+productos.forEach((producto) => {
+  let card = document.createElement("div");
+  card.classList.add("card", "w-50");
+  card.innerHTML = `
+    <div class="card-body">
+      <h5 class="card-title">${producto.descripcion}</h5>
+      <p class="card-text">$${producto.precio}</p>
+      <h3 id="codigo-${producto.codigo}" class="d-none ">${producto.codigo}</h3>
+      <div class="input-group mb-2">
+        <input type="text" id="cantidad-${producto.codigo}" class="form-control" placeholder="Ingresar cantidad" aria-label="Ingresar cantidad" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="btn-${producto.codigo}" onClick="comprarProducto(${producto.codigo})">Comprar</button>
+      </div>
+    </div>
+      `;
+  catalog.appendChild(card);
+});
+
+
 //Funciones --------------------------------------------------------------------------------------------------------------------------------
 function ingresarCliente() {
     let clientDetails = document.getElementById("clientDetail");
@@ -51,44 +71,116 @@ function ingresarCliente() {
 function validarFormularioCliente(e){
     let clientDetails = document.getElementById("clientDetail");
     e.preventDefault();
-    console.log("Formulario Enviado");
     condicionIva = document.getElementById("condicionIva").value;
     nombreCliente = document.getElementById("nombre").value;
-    console.log(condicionIva);
     clientDetails.parentNode.removeChild(clientDetails);
     const saludo = document.getElementById("welcome");
     let agregarSaludo = document.createElement("h2");
-    principalFunction(condicionIva);
-    agregarSaludo.innerHTML = `Bienvenido ${nombreCliente}, este es el detalle de tu compra: </h2>`;
+    agregarSaludo.innerHTML = `Bienvenido ${nombreCliente}, ingresaste como ${condicionIva} </h2>`;
     saludo.appendChild(agregarSaludo);
     
 }
 
-
-function elegirOpcion () {
-    opcionElegida = parseInt(prompt(`Podes comprar los siguientes productos (precios sin IVA):
-                                    \n ${productos[0].codigo} - ${productos[0].descripcion} $${productos[0].precio} \n ${productos[1].codigo} - ${productos[1].descripcion} $${productos[1].precio} \n ${productos[2].codigo} - ${productos[2].descripcion} $${productos[2].precio} \n 0 - Para salir 
-                                    \n Elegi una de las opciones`));
-}
-
-function totalizarIvaRespInscripto (ivaProducto, cantidad) {
-    ivaTotal = ivaTotal + (ivaProducto * cantidad);
-}
-
-function calcularSubtotal (precioVenta, cantidad) {
-    subtotal = precioVenta * cantidad;
-}
-
-function calcularTotal (subtotal) {
-    total = total + subtotal;
+function comprarProducto(_codigoProductoComprado) {
+    let codigoProductoComprado = parseInt(_codigoProductoComprado);
+    let cantidad = parseInt(document.getElementById(`cantidad-${_codigoProductoComprado}`).value);
+    buscarProducto(codigoProductoComprado);
+    calcularSubtotal(productoElegido.precio,cantidad);
+    agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
+    calcularTotal(subtotal);
+    totalizarIvaRespInscripto(productoElegido.calcularIvaRespInscriptoProducto(iva), cantidad);
+    armarTotalizador();
 }
 
 function buscarProducto (opcionElegida) {
     productoElegido = productos.find(producto => producto.codigo === opcionElegida);
 }
 
-function agregarProductoComprado(codigo, descripcion, cantidad, subtotal) {
-    productosComprados.push(new ProductoComprado(codigo, descripcion, cantidad, subtotal));    
+function totalizarIvaRespInscripto (ivaProducto, cantidad) {
+    ivaTotal = ivaTotal + (ivaProducto * cantidad);
+}
+function calcularSubtotal (precioVenta, cantidad) {
+    subtotal = precioVenta * cantidad;
+}
+
+function agregarProductoComprado(codigoAgregado, descripcion, cantidad, subtotal) {
+    let productoParaAgregar = productosComprados.find(producto => producto.codigo === codigoAgregado);
+    if (Boolean(productoParaAgregar) == true) {
+        total = total - productoParaAgregar.subtotal;
+        ivaTotal = ivaTotal - (productoParaAgregar.subtotal * 0.21);
+        productoParaAgregar.cantidadComprada = cantidad;
+        productoParaAgregar.subtotal = subtotal;
+    } else {
+        productosComprados.push(new ProductoComprado(codigoAgregado, descripcion, cantidad, subtotal));
+    }
+}
+
+function calcularTotal (subtotal) {
+    total = total + subtotal;
+}
+
+function armarTotalizador() {
+    if (productosComprados.length > 1) {
+        var element = document.getElementById("totalizador");
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+
+        const tableElement2 = document.getElementById("productosComprados");
+        while (tableElement2.firstChild) {
+            tableElement2.removeChild(tableElement2.firstChild);
+        }
+
+        
+        productosComprados.forEach((producto) => {
+            let productComprado = document.createElement("tr");
+            productComprado.innerHTML = `
+                    <td>${producto.cantidadComprada}</td>
+                    <td>${producto.descripcionComprada}</td>
+                    <td>$ ${producto.subtotal}</td>
+                </tr>`;
+            tableElement2.appendChild(productComprado);
+        });
+    
+        const mostrarTotal = document.getElementById("totalizador");
+        let totalfinal = document.createElement("h2");
+        totalfinal.className = "totalCart";
+        totalfinal.innerHTML = 
+                    `El total de la compra es $${total} y el IVA es $${ivaTotal}
+                </h2>
+                `;
+        mostrarTotal.appendChild(totalfinal);
+        
+    } else {
+        const tableTitle = document.getElementById("tableHead");
+        let titleProducts = document.createElement("tr");
+        titleProducts.innerHTML = ` <th scope="col">Cantidad</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Subtotal</th>
+                                    </tr>`;
+        tableTitle.appendChild(titleProducts);
+
+        const tableElement = document.getElementById("productosComprados");
+        productosComprados.forEach((producto) => {
+            let productComprado = document.createElement("tr");
+            productComprado.innerHTML = `
+                    <td>${producto.cantidadComprada}</td>
+                    <td>${producto.descripcionComprada}</td>
+                    <td>$ ${producto.subtotal}</td>
+                </tr>`;
+            tableElement.appendChild(productComprado);
+        });
+    
+        const mostrarTotal = document.getElementById("totalizador");
+        let totalfinal = document.createElement("h2");
+        totalfinal.className = "totalCart";
+        totalfinal.innerHTML = 
+                    `El total de la compra es $${total} y el IVA es $${ivaTotal}
+                </h2>
+                `;
+        mostrarTotal.appendChild(totalfinal);
+        
+    }
 }
 
 function ordenarProductos(ordenamiento) {
@@ -106,109 +198,4 @@ function ordenarProductos(ordenamiento) {
     }
 }
 
-// Algoritmo principal ---------------------------------------------------------------------------------------------------------------------
-
-
-//ordenamiento = parseInt(prompt(`Por favor elegi el orden en que queres ver los productos: \n 1 - Por codigo \n 2 - Por menor precio \n Si ingresas cualquier otra opcion se ordenara por codigo`));
-//ordenarProductos(ordenamiento);
-
 ingresarCliente();
-
-function principalFunction(condicionIva) {
-    
-
-if (condicionIva==1) {
-//Responsable Inscripto
-    elegirOpcion();
-    while(opcionElegida != 0 ){
-        cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));        
-        if (opcionElegida <= productos.length && opcionElegida > 0) {
-            buscarProducto(opcionElegida);
-            calcularSubtotal(productoElegido.precio,cantidad);
-            agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
-            calcularTotal(subtotal);
-            totalizarIvaRespInscripto(productoElegido.calcularIvaRespInscriptoProducto(iva), cantidad);
-        }
-        else {
-            alert("La opcion elegida es incorrecta, por favor elegir una opcion valida");
-        }
-        elegirOpcion();
-    }
-
-    const tableTitle = document.getElementById("tableHead");
-    let titleProducts = document.createElement("tr");
-    titleProducts.innerHTML = ` <th scope="col">Cantidad</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Subtotal</th>
-                                </tr>`;
-    tableTitle.appendChild(titleProducts);
-
-    const tableElement = document.getElementById("productosComprados");
-    productosComprados.forEach((producto) => {
-        let productComprado = document.createElement("tr");
-        productComprado.innerHTML = `
-                <td>${producto.cantidadComprada}</td>
-                <td>${producto.descripcionComprada}</td>
-                <td>$ ${producto.subtotal}</td>
-            </tr>`;
-        tableElement.appendChild(productComprado);
-    });
-
-    const mostrarTotal = document.getElementById("totalizador");
-    let totalfinal = document.createElement("h2");
-    totalfinal.innerHTML = 
-                `El total de la compra es $${total} y el IVA es $${ivaTotal}
-            </h2>
-            `;
-    mostrarTotal.appendChild(totalfinal);
-
-} 
-else if (condicionIva==2) {
-//Monotributista
-    elegirOpcion();
-    while(opcionElegida != 0 ){
-        cantidad = parseInt(prompt("Por favor ingresa la cantidad deseada"));
-        if (opcionElegida <= productos.length && opcionElegida > 0) {
-            buscarProducto(opcionElegida);
-            calcularSubtotal(productoElegido.calcularPrecioMonotributo(iva),cantidad);
-            calcularTotal(subtotal);
-            agregarProductoComprado(productoElegido.codigo, productoElegido.descripcion,cantidad,subtotal);
-        }
-        else {
-            alert("La opcion elegida es incorrecta, por favor elegir una opcion valida");
-        }
-    elegirOpcion();
-    }
-
-    const tableTitle = document.getElementById("tableHead");
-    let titleProducts = document.createElement("tr");
-    titleProducts.innerHTML = ` <th scope="col">Cantidad</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Subtotal</th>
-                                </tr>`;
-    tableTitle.appendChild(titleProducts);
-   
-    const tableElement = document.getElementById("productosComprados");
-    productosComprados.forEach((producto) => {
-        let productComprado = document.createElement("tr");
-        productComprado.innerHTML = `
-                <td>${producto.cantidadComprada}</td>
-                <td>${producto.descripcionComprada}</td>
-                <td>$ ${producto.subtotal}</td>
-            </tr>
-            `;
-        tableElement.appendChild(productComprado);
-    });
-
-    const mostrarTotal = document.getElementById("totalizador");
-    let totalfinal = document.createElement("h2");
-    totalfinal.innerHTML = `El total de la compra es $${total} IVA incluido por ser monotributo
-            </h2>`;
-    mostrarTotal.appendChild(totalfinal);
-
-}
-else {
-    alert("Ingresaste una opcion incorrecta, por favor volve a intentar ingresando: \n 1 - Para responsable inscripto \n 2 - Para monotributista");
-}
-
-}
